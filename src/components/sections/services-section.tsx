@@ -6,60 +6,47 @@ const services = [
   {
     title: "Landing Pages",
     description:
-      "Páginas enfocadas en convertir visitas en clientes con mensajes claros y llamados a la acción precisos.",
+      "Páginas diseñadas para captar clientes, promocionar un servicio o lanzar un producto con un objetivo claro: generar más consultas y ventas.",
     icon: "01",
   },
   {
     title: "Sitios Institucionales",
     description:
-      "Presencia profesional para negocios que necesitan confianza, autoridad y una imagen sólida online.",
+      "Transmití una imagen profesional y generá confianza con un sitio web que refleje la calidad y seriedad de tu empresa.",
     icon: "02",
   },
   {
     title: "Catálogo de Productos",
     description:
-      "Experiencias atractivas para mostrar productos con una navegación simple y atractiva.",
+      "Mostrá tus productos de forma organizada y atractiva para que tus clientes encuentren fácilmente lo que buscan.",
     icon: "03",
   },
   {
-    title: "Portfolios",
+    title: "Portfolios Profesionales",
     description:
-      "Diseños elegantes para destacar tu trabajo con una identidad visual potente y memorable.",
+      "Destacá tus proyectos, experiencia y habilidades con un portfolio moderno que genere una excelente primera impresión.",
     icon: "04",
   },
   {
-    title: "Hoteles",
+    title: "Webs para Emprendedores",
     description:
-      "Herramientas visuales y funcionales para mostrar habitaciones, servicios y reservas con fluidez.",
+      "Una solución moderna para impulsar tu negocio desde Internet y empezar a atraer clientes desde el primer día.",
     icon: "05",
-  },
-  {
-    title: "Veterinarias",
-    description:
-      "Paginas pensadas para generar confianza y facilitar la comunicación con nuevos clientes.",
-    icon: "06",
-  },
-  {
-    title: "Emprendimientos",
-    description:
-      "Soluciones rápidas y escalables para startups y negocios en crecimiento.",
-    icon: "07",
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section
-      id="servicios"
-      className="mx-auto max-w-7xl px-6 py-24 lg:px-10"
-    >
+    <section id="servicios" className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
       <div className="max-w-2xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#A6D63A]">
-          Servicios
-        </p>
         <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
-          Soluciones pensadas para vender mejor y comunicar con claridad.
+          Diseño y desarrollo de páginas web que ayudan a tu negocio a crecer.
         </h2>
+
+        <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+          Cada proyecto está pensado para transmitir confianza, destacar tu
+          marca y convertir visitantes en potenciales clientes.
+        </p>
       </div>
       <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
         {services.map((service) => (
@@ -79,9 +66,10 @@ export function ServicesSection() {
             </p>
             <Link
               href="#contacto"
-              className="mt-6 inline-flex text-sm font-semibold text-[#A6D63A] transition hover:text-lime-300"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#A6D63A] transition hover:gap-3 hover:text-lime-300"
             >
-              Solicitar presupuesto →
+              Hablemos de tu proyecto
+              <span>→</span>
             </Link>
           </motion.article>
         ))}
