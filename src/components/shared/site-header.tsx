@@ -9,9 +9,9 @@ export function SiteHeader() {
         </Link>
         <nav className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
           <Link href="#inicio" className="transition hover:text-white">Inicio</Link>
+          <Link href="#sobre-mi" className="transition hover:text-white">Sobre mí</Link>
           <Link href="#servicios" className="transition hover:text-white">Servicios</Link>
           <Link href="#proyectos" className="transition hover:text-white">Proyectos</Link>
-          <Link href="#sobre-mi" className="transition hover:text-white">Sobre mí</Link>
           <Link href="#contacto" className="transition hover:text-white">Contacto</Link>
         </nav>
         <Link

@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -12,7 +11,7 @@ const stats = [
 
 export function HeroSection() {
   return (
-    <section id="inicio" className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-32">
+    <section className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-32">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -20,26 +19,39 @@ export function HeroSection() {
         className="max-w-2xl"
       >
         <p className="mb-6 inline-flex rounded-full border border-[#A6D63A]/30 bg-[#A6D63A]/10 px-4 py-2 text-sm font-medium text-[#A6D63A]">
-          Desarrollo web premium para negocios que quieren crecer
+          Desarrollo web para negocios que quieren crecer
         </p>
         <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-7xl">
           Tu negocio merece una página web profesional.
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-          Diseño de sitios web modernos para emprendedores, negocios y profesionales que quieren transmitir confianza y conseguir más clientes.
+          Diseño de sitios web modernos para emprendedores, negocios y
+          profesionales que quieren transmitir confianza y conseguir más
+          clientes.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link href="#contacto" className="rounded-full bg-[#A6D63A] px-6 py-3 text-center font-semibold text-[#081826] transition hover:scale-[1.02]">
+          <Link
+            href="#contacto"
+            className="rounded-full bg-[#A6D63A] px-6 py-3 text-center font-semibold text-[#081826] transition hover:scale-[1.02]"
+          >
             Solicitar presupuesto
           </Link>
-          <Link href="#proyectos" className="rounded-full border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:border-[#A6D63A] hover:text-[#A6D63A]">
+          <Link
+            href="#proyectos"
+            className="rounded-full border border-white/15 px-6 py-3 text-center font-semibold text-white transition hover:border-[#A6D63A] hover:text-[#A6D63A]"
+          >
             Ver proyectos
           </Link>
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {stats.map((stat) => (
-            <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-              <p className="text-2xl font-semibold text-[#A6D63A]">{stat.value}</p>
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur"
+            >
+              <p className="text-2xl font-semibold text-[#A6D63A]">
+                {stat.value}
+              </p>
               <p className="mt-1 text-sm text-slate-400">{stat.label}</p>
             </div>
           ))}
@@ -62,16 +74,22 @@ export function HeroSection() {
                 <span className="h-2.5 w-2.5 rounded-full bg-white/50" />
                 <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
               </div>
-              <p className="text-xs uppercase tracking-[0.25em] text-slate-400">Preview</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
+                Preview
+              </p>
             </div>
             <div className="grid gap-4 lg:grid-cols-[1.1fr_0.8fr]">
               <div className="rounded-[24px] border border-white/10 bg-slate-950/80 p-4">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-semibold text-white">The Studio</p>
-                    <p className="text-xs text-slate-400">Landing page premium</p>
+                    <p className="text-sm font-semibold text-white">
+                      The Studio
+                    </p>
+                    <p className="text-xs text-slate-400">Landing page</p>
                   </div>
-                  <div className="rounded-full bg-[#A6D63A]/20 px-3 py-1 text-xs text-[#A6D63A]">Nuevo</div>
+                  <div className="rounded-full bg-[#A6D63A]/20 px-3 py-1 text-xs text-[#A6D63A]">
+                    Nuevo
+                  </div>
                 </div>
                 <div className="space-y-3">
                   <div className="h-24 rounded-[18px] bg-gradient-to-r from-[#A6D63A]/30 to-cyan-500/10" />
@@ -83,7 +101,9 @@ export function HeroSection() {
               </div>
               <div className="space-y-4">
                 <div className="rounded-[24px] border border-white/10 bg-white/5 p-4">
-                  <p className="text-xs uppercase tracking-[0.25em] text-slate-400">Celular</p>
+                  <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
+                    Celular
+                  </p>
                   <div className="mx-auto mt-4 h-48 w-28 rounded-[24px] border border-white/10 bg-slate-950 p-2">
                     <div className="h-full rounded-[18px] bg-gradient-to-b from-white/10 to-transparent p-3 text-center">
                       <div className="mx-auto mb-3 h-2 w-12 rounded-full bg-white/20" />
