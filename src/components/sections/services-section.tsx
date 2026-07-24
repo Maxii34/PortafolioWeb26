@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -37,7 +38,10 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="servicios" className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+    <section
+      id="servicios"
+      className="mx-auto max-w-7xl px-6 py-24 lg:px-10"
+    >
       <div className="max-w-2xl">
         <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
           Diseño y desarrollo de páginas web que ayudan a tu negocio a crecer.
@@ -48,32 +52,76 @@ export function ServicesSection() {
           marca y convertir visitantes en potenciales clientes.
         </p>
       </div>
-      <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+
+
+      {/* Desktop */}
+      <div className="mt-12 hidden gap-6 lg:grid lg:grid-cols-2 xl:grid-cols-3">
         {services.map((service) => (
-          <motion.article
+          <ServiceCard
             key={service.title}
-            whileHover={{ y: -4, scale: 1.01 }}
-            className="rounded-[28px] border border-white/10 bg-white/5 p-7 shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#A6D63A]/15 text-lg font-semibold text-[#A6D63A]">
-              {service.icon}
-            </div>
-            <h3 className="mt-6 text-xl font-semibold text-white">
-              {service.title}
-            </h3>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
-              {service.description}
-            </p>
-            <Link
-              href="#contacto"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#A6D63A] transition hover:gap-3 hover:text-lime-300"
-            >
-              Hablemos de tu proyecto
-              <span>→</span>
-            </Link>
-          </motion.article>
+            service={service}
+          />
         ))}
       </div>
+
+
+      {/* Mobile Carousel */}
+      <div className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 lg:hidden">
+        {services.map((service) => (
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            className="min-w-[85%] snap-center"
+          >
+            <ServiceCard service={service} />
+          </motion.div>
+        ))}
+      </div>
+
+      <p className="mt-3 text-center text-xs text-slate-400 lg:hidden">
+        Desliza para ver más servicios →
+      </p>
+
     </section>
+  );
+}
+
+
+function ServiceCard({
+  service,
+}: {
+  service: {
+    title: string;
+    description: string;
+    icon: string;
+  };
+}) {
+  return (
+    <motion.article
+      whileHover={{ y: -4, scale: 1.01 }}
+      className="h-full rounded-[28px] border border-white/10 bg-white/5 p-7 shadow-[0_20px_60px_rgba(0,0,0,0.2)] transition-all duration-300 hover:border-[#A6D63A]/30"
+    >
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#A6D63A]/15 text-lg font-semibold text-[#A6D63A]">
+        {service.icon}
+      </div>
+
+      <h3 className="mt-6 text-xl font-semibold text-white">
+        {service.title}
+      </h3>
+
+      <p className="mt-3 text-sm leading-7 text-slate-300">
+        {service.description}
+      </p>
+
+      <Link
+        href="#contacto"
+        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#A6D63A] transition hover:gap-3 hover:text-lime-300"
+      >
+        Hablemos de tu proyecto
+        <span>→</span>
+      </Link>
+    </motion.article>
   );
 }

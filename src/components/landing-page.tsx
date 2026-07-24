@@ -22,7 +22,6 @@ export function LandingPage() {
         <BenefitsSection />
         <ProjectsSection />
         <ProcessSection />
-        <TestimonialsSection />
         <FaqSection />
         <ContactSection />
       </main>

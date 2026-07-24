@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const benefits = [
   {
     label: "Diseño",
@@ -69,27 +73,67 @@ export function BenefitsSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+
+        {/* Desktop */}
+        <div className="mt-12 hidden gap-5 md:grid md:grid-cols-2 xl:grid-cols-4">
           {benefits.map((benefit) => (
-            <div
+            <BenefitCard
               key={benefit.title}
-              className="group rounded-[24px] border border-white/10 bg-[#081826]/70 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#A6D63A]/30 hover:shadow-[0_15px_40px_rgba(166,214,58,0.12)]"
-            >
-              <span className="inline-flex rounded-full border border-[#A6D63A]/20 bg-[#A6D63A]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A6D63A] transition-colors duration-300 group-hover:bg-[#A6D63A] group-hover:text-[#081826]">
-                {benefit.label}
-              </span>
-
-              <h3 className="mt-5 text-xl font-semibold text-white">
-                {benefit.title}
-              </h3>
-
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                {benefit.description}
-              </p>
-            </div>
+              benefit={benefit}
+            />
           ))}
         </div>
+
+
+        {/* Mobile Carousel */}
+        <div className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 md:hidden">
+          {benefits.map((benefit) => (
+            <motion.div
+              key={benefit.title}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4 }}
+              className="min-w-[85%] snap-center"
+            >
+              <BenefitCard benefit={benefit} />
+            </motion.div>
+          ))}
+        </div>
+
+        <p className="mt-3 text-center text-xs text-slate-400 md:hidden">
+          Desliza para ver más beneficios →
+        </p>
+
       </div>
     </section>
+  );
+}
+
+
+function BenefitCard({
+  benefit,
+}: {
+  benefit: {
+    label: string;
+    title: string;
+    description: string;
+  };
+}) {
+  return (
+    <div
+      className="group h-full rounded-[24px] border border-white/10 bg-[#081826]/70 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#A6D63A]/30 hover:shadow-[0_15px_40px_rgba(166,214,58,0.12)]"
+    >
+      <span className="inline-flex rounded-full border border-[#A6D63A]/20 bg-[#A6D63A]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A6D63A] transition-colors duration-300 group-hover:bg-[#A6D63A] group-hover:text-[#081826]">
+        {benefit.label}
+      </span>
+
+      <h3 className="mt-5 text-xl font-semibold text-white">
+        {benefit.title}
+      </h3>
+
+      <p className="mt-3 text-sm leading-7 text-slate-300">
+        {benefit.description}
+      </p>
+    </div>
   );
 }
