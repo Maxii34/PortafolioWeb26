@@ -7,7 +7,7 @@ export function ContactSection() {
         {/* Formulario */}
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#A6D63A]">
-            Contacto
+            # Contacto
           </p>
 
           <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
