@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { FaMobileAlt } from "react-icons/fa";
 
 type FormData = {
   nombre: string;
@@ -176,8 +177,9 @@ export function ContactSection() {
                 Contacto directo
               </p>
 
-              <p className="mt-3 break-words text-2xl font-bold text-white sm:text-3xl">
-                +54 9 381 687 0337
+              <p className="mt-3 flex items-center gap-3 break-words text-2xl font-bold text-white sm:text-3xl">
+                <FaMobileAlt className="text-[#A6D63A] text-xl sm:text-2xl" />
+                <span>+54 9 381 687 0337</span>
               </p>
 
               <p className="mt-3 text-sm leading-7 text-slate-300">
