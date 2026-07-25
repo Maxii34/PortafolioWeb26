@@ -1,10 +1,29 @@
+"use client";
+
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+
+type FormData = {
+  nombre: string;
+  email: string;
+  telefono: string;
+  negocio: string;
+  mensaje: string;
+};
 
 export function ContactSection() {
+  const instagran = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
+  const numero = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL;
 
-  const instagran = process.env.NEXT_PUBLIC_INSTAGRAM_URL
-  const numero = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
-  const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>();
 
   const mensaje = encodeURIComponent(
     "¡Hola! 👋 Vi tu portfolio y me interesa obtener información sobre el desarrollo de una página web para mi negocio. ¿Podemos conversar?",
@@ -12,11 +31,43 @@ export function ContactSection() {
 
   const url = `https://wa.me/${numero}?text=${mensaje}`;
 
+  const onSubmit = async (data: FormData) => {
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!,
+        {
+          from_name: data.nombre,
+          from_email: data.email,
+          phone: data.telefono,
+          business: data.negocio,
+          message: data.mensaje,
+        },
+        process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY!,
+      );
+
+      Swal.fire({
+        title: "Mensaje enviado",
+        text: "Gracias por contactarme. Me pondré en contacto contigo lo antes posible.",
+        icon: "success",
+        confirmButtonColor: "#A6D63A",
+      });
+
+      reset();
+    } catch (error) {
+      console.error(error);
+
+      Swal.fire({
+        title: "Error",
+        text: "No se pudo enviar el mensaje. Intenta nuevamente.",
+        icon: "error",
+        confirmButtonColor: "#A6D63A",
+      });
+    }
+  };
+
   return (
-    <section
-      id="contacto"
-      className="mx-auto max-w-7xl px-6 py-20 lg:px-10"
-    >
+    <section id="contacto" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
       <div className="grid gap-10 rounded-2xl border border-[#A6D63A]/20 bg-gradient-to-br from-[#A6D63A]/10 to-white/5 p-5 shadow-[0_20px_60px_rgba(0,0,0,.35)] sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:rounded-[40px] lg:p-12">
         {/* ================= Formulario ================= */}
         <div>
@@ -33,38 +84,76 @@ export function ContactSection() {
             profesional y adaptado a las necesidades de tu negocio.
           </p>
 
-          <form className="mt-8 grid gap-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-8 grid gap-4">
             <div className="grid gap-4 md:grid-cols-2">
-              <input
-                className="rounded-xl border border-white/10 bg-[#081826]/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition focus:border-[#A6D63A] focus:outline-none"
-                placeholder="Nombre"
-              />
+              <div>
+                <input
+                  {...register("nombre", {
+                    required: "El nombre es obligatorio",
+                  })}
+                  className="w-full rounded-xl border border-white/10 bg-[#081826]/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition focus:border-[#A6D63A] focus:outline-none"
+                  placeholder="Nombre"
+                />
 
-              <input
-                className="rounded-xl border border-white/10 bg-[#081826]/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition focus:border-[#A6D63A] focus:outline-none"
-                placeholder="Correo electrónico"
-              />
+                {errors.nombre && (
+                  <p className="mt-1 text-xs text-red-400">
+                    {errors.nombre.message}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <input
+                  {...register("email", {
+                    required: "El correo es obligatorio",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Correo inválido",
+                    },
+                  })}
+                  className="w-full rounded-xl border border-white/10 bg-[#081826]/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition focus:border-[#A6D63A] focus:outline-none"
+                  placeholder="Correo electrónico"
+                />
+
+                {errors.email && (
+                  <p className="mt-1 text-xs text-red-400">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
               <input
+                {...register("telefono")}
                 className="rounded-xl border border-white/10 bg-[#081826]/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition focus:border-[#A6D63A] focus:outline-none"
                 placeholder="Teléfono"
               />
 
               <input
+                {...register("negocio")}
                 className="rounded-xl border border-white/10 bg-[#081826]/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition focus:border-[#A6D63A] focus:outline-none"
                 placeholder="Empresa o negocio"
               />
             </div>
 
             <textarea
+              {...register("mensaje", {
+                required: "Contame tu proyecto",
+              })}
               className="min-h-36 rounded-xl border border-white/10 bg-[#081826]/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition focus:border-[#A6D63A] focus:outline-none"
               placeholder="Contame tu proyecto..."
             />
 
-            <button className="mt-2 w-full rounded-xl bg-[#A6D63A] px-8 py-3 font-semibold text-[#081826] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_35px_rgba(166,214,58,0.35)] sm:w-fit">
-              Solicitar presupuesto
+            {errors.mensaje && (
+              <p className="text-xs text-red-400">{errors.mensaje.message}</p>
+            )}
+
+            <button
+              disabled={isSubmitting}
+              className="mt-2 w-full rounded-xl bg-[#A6D63A] px-8 py-3 font-semibold text-[#081826] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_35px_rgba(166,214,58,0.35)] disabled:cursor-not-allowed disabled:opacity-50 sm:w-fit"
+            >
+              {isSubmitting ? "Enviando..." : "Solicitar presupuesto"}
             </button>
           </form>
         </div>
@@ -82,7 +171,6 @@ export function ContactSection() {
               negocio.
             </p>
 
-            {/* Contacto directo */}
             <div className="mt-8 rounded-2xl border border-[#A6D63A]/20 bg-[#A6D63A]/10 p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#A6D63A]">
                 Contacto directo
@@ -99,7 +187,6 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Redes */}
           <div className="mt-10">
             <p className="mb-5 text-center text-sm uppercase tracking-[0.2em] text-slate-400">
               También podés encontrarme en
