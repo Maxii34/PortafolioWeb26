@@ -1,9 +1,11 @@
+import { FaLaptopCode } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
+
 export function AboutSection() {
+  const portafolioDev = process.env.NEXT_PUBLIC_PORTAFOLIODEV_URL;
+
   return (
-    <section
-      id="sobre-mi"
-      className="mx-auto max-w-7xl px-6 py-20 lg:px-10"
-    >
+    <section id="sobre-mi" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
       <div className="rounded-[24px] border border-white/10 bg-white/5 p-5 shadow-[0_20px_70px_rgba(0,0,0,0.35)] backdrop-blur-sm lg:p-10">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
           {/* Contenido */}
@@ -15,6 +17,19 @@ export function AboutSection() {
             <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
               Hola, soy Maximiliano.
             </h2>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a
+                href={portafolioDev}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/30 bg-[#A6D63A]/10 px-4 py-2 text-sm font-medium text-[#A6D63A] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#A6D63A] hover:bg-[#A6D63A]/20"
+              >
+                <FaLaptopCode />
+                Full Stack Developer
+                <FaCode className="text-base" />
+              </a>
+            </div>
 
             <p className="mt-6 text-lg leading-8 text-slate-300">
               Soy desarrollador web especializado en crear sitios modernos,
@@ -42,29 +57,6 @@ export function AboutSection() {
               />
             </div>
           </div>
-        </div>
-
-        {/* Beneficios */}
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            "Comunicación directa",
-            "Atención personalizada",
-            "Diseño moderno",
-            "Sitios rápidos",
-            "Compatible con celulares",
-            "Enfoque en resultados",
-          ].map((item) => (
-            <div
-              key={item}
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#081826]/70 p-3 text-sm text-slate-300 transition-all duration-300 hover:border-[#A6D63A]/30 hover:bg-[#0c2133]"
-            >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#A6D63A]/15 font-bold text-[#A6D63A]">
-                ✓
-              </span>
-
-              <span>{item}</span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
