@@ -4,8 +4,8 @@ export type Project = {
   type: string;
   description: string;
   cover: string;
-  gallery: string[];
   features: string[];
+  link: string;
 };
 
 export const projects: Project[] = [
@@ -15,8 +15,8 @@ export const projects: Project[] = [
     type: "Sistema de gestión",
     description:
       "Una plataforma diseñada para clínicas veterinarias que permite administrar turnos, pacientes e historias clínicas desde un solo lugar, simplificando el trabajo diario del equipo.",
-    cover: "/img/Dog1.png",
-    gallery: ["/img/Dog1.png", "/img/Dog2.png", "/img/Dog3.png"],
+    cover: "/img/dot01.png",
+    link: "https://dogtorveterinaria.netlify.app/",
     features: [
       "Gestión de turnos",
       "Administración de pacientes",
@@ -31,8 +31,8 @@ export const projects: Project[] = [
     type: "Sistema para hoteles",
     description:
       "Una solución para hoteles que facilita la administración de reservas, habitaciones y huéspedes mediante una interfaz clara y organizada.",
-    cover: "/img/Sintax01.png",
-    gallery: ["/img/Sintax01.png", "/img/Sintax02.png", "/img/Sintax03.png"],
+    cover: "/img/hotel01.png",
+    link: "https://sintaxhotelv2max.netlify.app/",
     features: [
       "Gestión de reservas",
       "Control de habitaciones",
@@ -44,16 +44,11 @@ export const projects: Project[] = [
   {
     slug: "blog-recetas",
     title: "Blog de Recetas",
-    type: "Blog profesional",
+    type: "Sitio web de recetas",
     description:
       "Sitio pensado para publicar recetas y contenido gastronómico con una administración sencilla que permite actualizar información rápidamente.",
-    cover: "/img/Tarta1.png",
-    gallery: [
-      "/img/Tarta1.png",
-      "/img/Tarta2.png",
-      "/img/Tarta3.png",
-      "/img/Tarta4.png",
-    ],
+    cover: "/img/receta01.png",
+    link: "https://blogderecetasmax.netlify.app/",
     features: [
       "Publicación de recetas",
       "Panel de administración",
@@ -66,17 +61,10 @@ export const projects: Project[] = [
     slug: "apolo-petshop",
     title: "Apolo PetShop",
     type: "Tienda online",
+    cover: "/img/pet01.png",
     description:
       "Un e-commerce desarrollado para facilitar la venta de productos para mascotas, con una experiencia de compra rápida y un catálogo organizado.",
-    cover: "/img/Apolo01.png",
-    gallery: [
-      "/img/Apolo01.png",
-      "/img/Apolo02.png",
-      "/img/Apolo03.png",
-      "/img/Apolo04.png",
-      "/img/Apolo05.png",
-      "/img/Apolo06.png",
-    ],
+    link: "https://petshop-v2-apolo.netlify.app/",
     features: [
       "Catálogo de productos",
       "Carrito de compras",

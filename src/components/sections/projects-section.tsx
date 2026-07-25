@@ -6,10 +6,7 @@ import { projects } from "@/data/projects";
 
 export function ProjectsSection() {
   return (
-    <section
-      id="proyectos"
-      className="mx-auto max-w-7xl px-6 py-24 lg:px-10"
-    >
+    <section id="proyectos" className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#A6D63A]">
@@ -59,11 +56,12 @@ export function ProjectsSection() {
                 </p>
 
                 <Link
-                  href={`/proyectos/${project.slug}`}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-6 inline-flex items-center gap-2 font-medium text-white transition-all duration-300 hover:text-[#A6D63A]"
                 >
                   Ver proyecto
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
