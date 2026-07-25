@@ -68,8 +68,8 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-      <div className="grid gap-10 rounded-2xl border border-[#A6D63A]/20 bg-gradient-to-br from-[#A6D63A]/10 to-white/5 p-5 shadow-[0_20px_60px_rgba(0,0,0,.35)] sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:rounded-[40px] lg:p-12">
+    <section id="contacto" className="mx-auto max-w-7xl px-4 py-6 lg:px-10">
+      <div className="grid gap-10 rounded-4xl border border-[#A6D63A]/20 bg-gradient-to-br from-[#A6D63A]/10 to-white/5 p-5 shadow-[0_20px_60px_rgba(0,0,0,.35)] sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:rounded-[40px] lg:p-12">
         {/* ================= Formulario ================= */}
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#A6D63A]">

@@ -114,14 +114,6 @@ function ServiceCard({
       <p className="mt-3 text-sm leading-7 text-slate-300">
         {service.description}
       </p>
-
-      <Link
-        href="#contacto"
-        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#A6D63A] transition hover:gap-3 hover:text-lime-300"
-      >
-        Hablemos de tu proyecto
-        <span>→</span>
-      </Link>
     </motion.article>
   );
 }
