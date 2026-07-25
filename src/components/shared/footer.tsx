@@ -18,37 +18,6 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 flex justify-center gap-6">
-          <a
-            href="https://facebook.com/tuusuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform duration-300 hover:scale-110"
-            aria-label="Facebook"
-          >
-            <FaFacebookF size={28} color="#1877F2" />
-          </a>
-
-          <a
-            href="https://instagram.com/tuusuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform duration-300 hover:scale-110"
-            aria-label="Instagram"
-          >
-            <FaInstagram size={28} color="#E4405F" />
-          </a>
-
-          <a
-            href="https://tiktok.com/@tuusuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform duration-300 hover:scale-110"
-            aria-label="TikTok"
-          >
-            <FaTiktok size={28} color="#FFFFFF" />
-          </a>
-        </div>
         <div className="mx-auto mt-8 max-w-7xl border-t border-white/10 pt-6 text-center text-sm text-slate-500">
           © 2026 CodeMax.Dev. Todos los derechos reservados.
         </div>

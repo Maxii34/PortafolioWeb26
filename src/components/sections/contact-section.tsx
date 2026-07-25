@@ -1,6 +1,11 @@
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export function ContactSection() {
+
+  const instagran = process.env.NEXT_PUBLIC_INSTAGRAM_URL
+  const celular = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+  const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL
+
   return (
     <section
       id="contacto"
@@ -96,31 +101,31 @@ export function ContactSection() {
 
             <div className="flex justify-center gap-4">
               <a
-                href="https://wa.me/5493816870337"
+                href={celular}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_15px_35px_rgba(37,211,102,0.45)] sm:h-16 sm:w-16"
+                className="flex h-14 w-14 items-center justify-center rounded-4xl bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_15px_35px_rgba(37,211,102,0.45)] sm:h-16 sm:w-16"
               >
                 <FaWhatsapp size={28} />
               </a>
 
               <a
-                href="https://instagram.com"
+                href={instagran}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E4405F] text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_15px_35px_rgba(228,64,95,0.45)] sm:h-16 sm:w-16"
+                className="flex h-14 w-14 items-center justify-center rounded-4xl bg-[#E4405F] text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_15px_35px_rgba(228,64,95,0.45)] sm:h-16 sm:w-16"
               >
                 <FaInstagram size={26} />
               </a>
 
               <a
-                href="https://facebook.com"
+                href={facebook}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1877F2] text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_15px_35px_rgba(24,119,242,0.45)] sm:h-16 sm:w-16"
+                className="flex h-14 w-14 items-center justify-center rounded-4xl bg-[#1877F2] text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_15px_35px_rgba(24,119,242,0.45)] sm:h-16 sm:w-16"
               >
                 <FaFacebookF size={24} />
               </a>
