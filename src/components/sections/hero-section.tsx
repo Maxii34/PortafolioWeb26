@@ -50,7 +50,7 @@ export function HeroSection() {
         <div className="absolute -left-8 top-8 h-28 w-28 rounded-full bg-[#A6D63A]/20 blur-3xl" />
         <div className="absolute bottom-8 right-0 h-36 w-36 rounded-full bg-cyan-400/20 blur-3xl" />
         <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur">
-          <div className="rounded-[24px] border border-white/10 bg-[#081826] p-4">
+          <div className="rounded-[14px] border border-white/10 bg-[#081826] p-4">
             <div className="mb-4 flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-3 py-2">
               <div className="flex gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#A6D63A]" />
@@ -88,7 +88,7 @@ export function HeroSection() {
                     Celular
                   </p>
                   <div className="mx-auto mt-4 h-48 w-28 rounded-[24px] border border-white/10 bg-slate-950 p-2">
-                    <div className="h-full rounded-[18px] bg-gradient-to-b from-white/10 to-transparent p-3 text-center">
+                    <div className="h-full rounded-[14px] bg-gradient-to-b from-white/10 to-transparent p-3 text-center">
                       <div className="mx-auto mb-3 h-2 w-12 rounded-full bg-white/20" />
                       <div className="h-10 rounded-[12px] bg-[#A6D63A]/20" />
                       <div className="mt-3 h-12 rounded-[12px] bg-white/10" />

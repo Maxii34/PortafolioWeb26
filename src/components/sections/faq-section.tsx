@@ -51,7 +51,7 @@ export function FaqSection() {
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-      <div className="rounded-[40px] border border-white/10 bg-white/5 p-8 lg:p-12">
+      <div className="rounded-[20px] border border-white/10 bg-white/5 p-4 lg:p-12">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#A6D63A]">
             # Preguntas frecuentes
@@ -74,7 +74,7 @@ export function FaqSection() {
             return (
               <div
                 key={item.question}
-                className="rounded-[24px] border border-white/10 bg-[#081826]/70 p-5 transition-all duration-300 hover:border-[#A6D63A]/30"
+                className="rounded-[14px] border border-white/10 bg-[#081826]/70 p-5 transition-all duration-300 hover:border-[#A6D63A]/30"
               >
                 <button
                   className="flex w-full items-center justify-between gap-4 text-left"

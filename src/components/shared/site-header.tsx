@@ -14,12 +14,6 @@ export function SiteHeader() {
           <Link href="#proyectos" className="transition hover:text-white">Proyectos</Link>
           <Link href="#contacto" className="transition hover:text-white">Contacto</Link>
         </nav>
-        <Link
-          href="#contacto"
-          className="rounded-full bg-[#A6D63A] px-4 py-2 text-sm font-semibold text-[#081826] transition hover:scale-[1.02]"
-        >
-          Solicitar presupuesto
-        </Link>
       </div>
     </header>
   );

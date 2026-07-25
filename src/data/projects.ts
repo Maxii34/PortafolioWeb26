@@ -6,71 +6,82 @@ export type Project = {
   cover: string;
   gallery: string[];
   features: string[];
-  technologies: string[];
 };
 
 export const projects: Project[] = [
   {
-    slug: "petshop",
-    title: "PetShop Premium",
-    type: "Catálogo de productos",
+    slug: "dogtor-veterinaria",
+    title: "Dogtor Veterinaria",
+    type: "Sistema de gestión",
     description:
-      "Una tienda online elegante para un pet shop que necesitaba destacar sus productos y servicios con una propuesta premium.",
-    cover:
-      "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=1200&q=80",
-    ],
+      "Una plataforma diseñada para clínicas veterinarias que permite administrar turnos, pacientes e historias clínicas desde un solo lugar, simplificando el trabajo diario del equipo.",
+    cover: "/img/Dog1.png",
+    gallery: ["/img/Dog1.png", "/img/Dog2.png", "/img/Dog3.png"],
     features: [
-      "Diseño premium y visual",
-      "Catálogo con enfoque comercial",
-      "Sección de contacto y WhatsApp",
-      "Optimizado para dispositivos móviles",
+      "Gestión de turnos",
+      "Administración de pacientes",
+      "Historias clínicas digitales",
+      "Panel intuitivo y fácil de usar",
     ],
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
   },
+
   {
-    slug: "veterinaria",
-    title: "Clínica Veterinaria",
-    type: "Sitio institucional",
+    slug: "sintax-hotel",
+    title: "Sintax Hotel",
+    type: "Sistema para hoteles",
     description:
-      "Un sitio institucional pensado para transmitir confianza, mostrar servicios y facilitar contacto para nuevas consultas.",
-    cover:
-      "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1200&q=80",
-    ],
+      "Una solución para hoteles que facilita la administración de reservas, habitaciones y huéspedes mediante una interfaz clara y organizada.",
+    cover: "/img/Sintax01.png",
+    gallery: ["/img/Sintax01.png", "/img/Sintax02.png", "/img/Sintax03.png"],
     features: [
-      "Experiencia cálida y profesional",
-      "Sección de servicios y turnos",
-      "Diseño limpio y accesible",
-      "Alta velocidad de carga",
+      "Gestión de reservas",
+      "Control de habitaciones",
+      "Administración de huéspedes",
+      "Panel administrativo",
     ],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
+
   {
-    slug: "hotel",
-    title: "Hotel Boutique",
-    type: "Sitio para hotel",
+    slug: "blog-recetas",
+    title: "Blog de Recetas",
+    type: "Blog profesional",
     description:
-      "Un proyecto visual y elegante para mostrar habitaciones, experiencias y reservas con una estética premium.",
-    cover:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+      "Sitio pensado para publicar recetas y contenido gastronómico con una administración sencilla que permite actualizar información rápidamente.",
+    cover: "/img/Tarta1.png",
     gallery: [
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+      "/img/Tarta1.png",
+      "/img/Tarta2.png",
+      "/img/Tarta3.png",
+      "/img/Tarta4.png",
     ],
     features: [
-      "Galería visual atractiva",
-      "Diseño tipo marca premium",
-      "Secciones para habitaciones y contacto",
-      "Narrativa visual elegante",
+      "Publicación de recetas",
+      "Panel de administración",
+      "Buscador de contenido",
+      "Diseño adaptable a celulares",
     ],
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
+  },
+
+  {
+    slug: "apolo-petshop",
+    title: "Apolo PetShop",
+    type: "Tienda online",
+    description:
+      "Un e-commerce desarrollado para facilitar la venta de productos para mascotas, con una experiencia de compra rápida y un catálogo organizado.",
+    cover: "/img/Apolo01.png",
+    gallery: [
+      "/img/Apolo01.png",
+      "/img/Apolo02.png",
+      "/img/Apolo03.png",
+      "/img/Apolo04.png",
+      "/img/Apolo05.png",
+      "/img/Apolo06.png",
+    ],
+    features: [
+      "Catálogo de productos",
+      "Carrito de compras",
+      "Filtros por categorías",
+      "Panel de administración",
+    ],
   },
 ];

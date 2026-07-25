@@ -33,7 +33,7 @@ const processSteps = [
 export function ProcessSection() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-      <div className="rounded-[40px] border border-white/10 bg-white/5 p-8 shadow-[0_20px_70px_rgba(0,0,0,0.25)] lg:p-12">
+      <div className="rounded-[20px] border border-white/10 bg-white/5 p-4 shadow-[0_20px_70px_rgba(0,0,0,0.25)] lg:p-12">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#A6D63A]">
             # Cómo trabajamos
@@ -90,7 +90,7 @@ function ProcessCard({
   index: number;
 }) {
   return (
-    <div className="h-full rounded-[24px] border border-white/10 bg-[#081826]/70 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#A6D63A]/30">
+    <div className="h-full rounded-[14px] border border-white/10 bg-[#081826]/70 p-4 transition-all duration-300 hover:-translate-y-2 hover:border-[#A6D63A]/30">
       <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#A6D63A]/20 bg-[#A6D63A]/10 text-sm font-semibold text-[#A6D63A]">
         0{index + 1}
       </div>
