@@ -3,8 +3,14 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 export function ContactSection() {
 
   const instagran = process.env.NEXT_PUBLIC_INSTAGRAM_URL
-  const celular = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+  const numero = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
   const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL
+
+  const mensaje = encodeURIComponent(
+    "¡Hola! 👋 Vi tu portfolio y me interesa obtener información sobre el desarrollo de una página web para mi negocio. ¿Podemos conversar?",
+  );
+
+  const url = `https://wa.me/${numero}?text=${mensaje}`;
 
   return (
     <section
@@ -101,7 +107,7 @@ export function ContactSection() {
 
             <div className="flex justify-center gap-4">
               <a
-                href={celular}
+                href={url}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
