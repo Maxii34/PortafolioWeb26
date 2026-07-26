@@ -4,7 +4,7 @@ export function WhatsappFloat() {
   const numero = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
 
   const mensaje = encodeURIComponent(
-    "¡Hola! 👋 Vi tu portfolio y me interesa obtener información sobre el desarrollo de una página web para mi negocio.",
+    "¡Hola! 👋 Estuve viendo tu página web y me gustaría recibir información sobre el desarrollo de una página web para mi negocio.",
   );
 
   const url = `https://wa.me/${numero}?text=${mensaje}`;
