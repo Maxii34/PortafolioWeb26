@@ -48,7 +48,7 @@ export function HeroSection() {
         initial={{ opacity: 0, x: 24 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 0.1 }}
-        className="relative"
+        className="hidden rounded-2xl border border-white/10 bg-white/5 p-4 lg:block"
       >
         <div className="absolute -left-8 top-8 h-28 w-28 rounded-full bg-[#A6D63A]/20 blur-3xl" />
         <div className="absolute bottom-8 right-0 h-36 w-36 rounded-full bg-cyan-400/20 blur-3xl" />
