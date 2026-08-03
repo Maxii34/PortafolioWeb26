@@ -14,8 +14,9 @@ export function AboutSection() {
               # Sobre mí
             </p>
 
-            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
-              Hola, soy Maximiliano Ordoñez.
+            <h2 className="mt-3 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+              Hola, soy <br />
+              Maximiliano Ordoñez.
             </h2>
 
             <div className="mt-4 flex flex-wrap gap-3">

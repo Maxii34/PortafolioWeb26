@@ -72,4 +72,20 @@ export const projects: Project[] = [
       "Panel de administración",
     ],
   },
+
+  {
+    slug: "lorepelu-turnos",
+    title: "LorePelu Turnos",
+    type: "Sistema de gestión",
+    description:
+      "Una plataforma pensada para peluquerías que permite reservar turnos online, administrar servicios y gestionar comentarios de clientes desde un panel simple e intuitivo.",
+    cover: "/img/pelulore.png",
+    link: "https://sistematurnospl.netlify.app/",
+    features: [
+      "Reserva de turnos online",
+      "Gestión de servicios",
+      "Panel administrativo por roles",
+      "Comentarios y valoraciones de clientes",
+    ],
+  },
 ];
