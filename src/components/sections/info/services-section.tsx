@@ -16,31 +16,31 @@ const services = [
   {
     title: "Landing Pages",
     description:
-      "Páginas optimizadas para captar clientes y promocionar productos enfocadas en convertir visitas en ventas.",
+      "Páginas enfocadas en presentar tu producto o servicio y generar nuevos clientes.",
     icon: Rocket,
   },
   {
     title: "Sitios Institucionales",
     description:
-      "Transmití seriedad y elegancia con un sitio web corporativo que refleje la autoridad de tu marca.",
+      "Páginas para profesionales, servicios y empresas que buscan tener una presencia online profesional.",
     icon: Building2,
   },
   {
     title: "Catálogos Digitales",
     description:
-      "Exhibí tus productos de forma organizada y moderna para que tus clientes consulten tu stock ágilmente.",
+      "Mostrá tus productos de forma organizada para que tus clientes puedan conocerlos fácilmente.",
     icon: ShoppingBag,
   },
   {
     title: "Portafolios Profesionales",
     description:
-      "Destacá tus proyectos y habilidades con una presentación impecable que genere un impacto inmediato.",
+      "Presentá tus proyectos, trabajos y habilidades de forma clara y profesional.",
     icon: Briefcase,
   },
   {
     title: "Webs para Emprendedores",
     description:
-      "Soluciones ágiles y accesibles para lanzar tu negocio con una presencia digital sólida desde el día uno.",
+      "Páginas simples y funcionales para mostrar tu emprendimiento y llegar a más personas.",
     icon: Sparkles,
   },
 ];
@@ -49,20 +49,25 @@ export function ServicesSection() {
   return (
     <section id="servicios" className="relative py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        
-        {/* ENCABEZADO MÁS COMPACTO */}
+        {/* ENCABEZADO */}
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-xl">
+          <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/30 bg-[#A6D63A]/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
               Servicios Web
             </div>
-            <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
-              Soluciones digitales para <span className="text-[#A6D63A]">impulsar tu negocio.</span>
+
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight">
+              ¿Qué tipo de página web necesitas?{" "}
+              <span className="block mt-1 text-[#A6D63A]">
+                Soluciones digitales para impulsar tu negocio.
+              </span>
             </h2>
+
+            <p className="mt-4 max-w-xl text-sm text-slate-300 sm:text-base lg:text-lg">
+              Plataformas web optimizadas en rendimiento, seguridad y
+              experiencia de usuario.
+            </p>
           </div>
-          <p className="max-w-md text-sm text-slate-300 lg:text-base">
-            Código moderno, velocidad extrema y diseño pensado para transmitir confianza.
-          </p>
         </div>
 
         {/* GRILLA COMPACTA DESKTOP */}
@@ -71,7 +76,7 @@ export function ServicesSection() {
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
 
-          {/* TARJETA 6: CONTACTO DIRECTO (SIN BOTÓN) */}
+          {/* TARJETA 6: CONTACTO DIRECTO */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +101,8 @@ export function ServicesSection() {
                   ¿Proyecto a medida?
                 </h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-slate-300">
-                  Creamos planes personalizados adaptados a las necesidades exactas de tu negocio.
+                  Creamos planes personalizados adaptados a las necesidades
+                  exactas de tu negocio.
                 </p>
               </div>
             </Link>
@@ -123,8 +129,12 @@ export function ServicesSection() {
                 <ArrowUpRight className="h-5 w-5 text-[#A6D63A]" />
               </div>
               <div className="mt-4">
-                <h3 className="text-lg font-bold text-white">¿Proyecto a medida?</h3>
-                <p className="mt-1 text-xs text-slate-300">Hablemos para armar un plan personalizado.</p>
+                <h3 className="text-lg font-bold text-white">
+                  ¿Proyecto a medida?
+                </h3>
+                <p className="mt-1 text-xs text-slate-300">
+                  Hablemos para armar un plan personalizado.
+                </p>
               </div>
             </Link>
           </div>
@@ -133,7 +143,6 @@ export function ServicesSection() {
         <p className="text-center text-[11px] text-slate-400 lg:hidden">
           ← Deslizá para ver más →
         </p>
-
       </div>
     </section>
   );
