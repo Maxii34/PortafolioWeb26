@@ -13,7 +13,7 @@ import Footer from "./shared/footer";
 
 export function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#081826] text-white">
+    <div className="min-h-screen text-white">
       <SiteHeader />
       <main id="inicio">
         <HeroSection />
