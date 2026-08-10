@@ -22,7 +22,6 @@ export default function Footer() {
 
   const navLinks = [
     { href: "#inicio", label: "Inicio" },
-    { href: "#sobre-mi", label: "Sobre mí" },
     { href: "#servicios", label: "Servicios" },
     { href: "#proyectos", label: "Trabajos" },
     { href: "#contacto", label: "Contacto" },
