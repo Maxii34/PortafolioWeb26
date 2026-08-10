@@ -7,7 +7,7 @@ import {
   FaTiktok,
   FaWhatsapp,
 } from "react-icons/fa6";
-import { Terminal, Heart } from "lucide-react";
+import { Terminal, Heart, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   const instagram = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "#";
@@ -73,17 +73,33 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* COLUMNA 3: REDES SOCIALES */}
+          {/* COLUMNA 3: CONTACTOS Y REDES SOCIALES */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
-              Redes Sociales
+              Contactos
             </h4>
 
-            <p className="mt-2 text-xs text-slate-400">
+            {/* INFORMACIÓN DE CONTACTO (CORREO Y DIRECCIÓN) */}
+            <div className="mt-4 flex flex-col gap-2.5 text-sm text-slate-300">
+              <a
+                href="mailto:contacto@codemax.dev"
+                className="flex items-center gap-2.5 transition-colors hover:text-[#A6D63A]"
+              >
+                <Mail className="h-4 w-4 shrink-0 text-[#A6D63A]" />
+                <span>codemax-dev@Gmail.com</span>
+              </a>
+
+              <div className="flex items-center gap-2.5">
+                <MapPin className="h-4 w-4 shrink-0 text-[#A6D63A]" />
+                <span>San Miguel de Tucumán, Argentina</span>
+              </div>
+            </div>
+
+            <p className="mt-4 text-xs text-slate-400">
               Conectemos a través de nuestras redes oficiales.
             </p>
 
-            <div className="mt-4 flex gap-3">
+            <div className="mt-3 flex gap-3">
               <a
                 href={urlWhatsapp}
                 target="_blank"
