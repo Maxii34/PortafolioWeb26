@@ -2,47 +2,54 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  HelpCircle,
+  ChevronDown,
+  MessageCircle,
+  ArrowRight,
+} from "lucide-react";
+import Link from "next/link";
 
 const faqItems = [
   {
     question: "¿Cuánto tarda crear una página web?",
     answer:
-      "El tiempo depende del tamaño del proyecto y sus funcionalidades, pero normalmente una web profesional puede estar lista entre 7 y 15 días hábiles.",
+      "El tiempo depende de las funcionalidades del proyecto, pero un sitio web profesional suele entregarse en un plazo de entre 7 y 15 días hábiles.",
   },
   {
     question: "¿Cómo es el proceso de trabajo?",
     answer:
-      "Primero conocemos tu idea, luego realizamos una propuesta visual. Una vez aprobada, comenzamos el desarrollo y mostramos avances durante el proceso hasta la entrega final.",
+      "Primero conversamos tu idea, diseñamos la propuesta visual y, tras tu aprobación, desarrollamos el sitio completo mostrando avances hasta el lanzamiento.",
   },
   {
-    question: "¿Necesito tener dominio y hosting?",
+    question: "¿Necesito contratar hosting y dominio?",
     answer:
-      "No es obligatorio al principio. Podemos ayudarte a elegir y configurar el dominio y hosting adecuado para que tu sitio quede publicado correctamente.",
+      "No te preocupes por la parte técnica. Te asesoro y ayudo a configurar el mejor hosting y dominio para que tu web funcione perfecta.",
   },
   {
-    question: "¿La página funciona en celulares?",
+    question: "¿La página se verá bien en celulares?",
     answer:
-      "Sí. Todas las páginas se desarrollan adaptadas para celulares, tablets y computadoras, ofreciendo una buena experiencia en cualquier dispositivo.",
+      "Sí, 100%. Todos los proyectos están desarrollados con arquitectura Responsive, adaptándose perfectamente a smartphones, tablets y PC.",
   },
   {
-    question: "¿Puedo pedir cambios durante el desarrollo?",
+    question: "¿Puedo solicitar ajustes durante el desarrollo?",
     answer:
-      "Sí. Trabajamos revisando avances para realizar ajustes y asegurarnos de que el resultado final represente lo que necesitas.",
+      "Por supuesto. Revisamos avances periódicamente para realizar las modificaciones necesarias y garantizar que el resultado cumpla con tus expectativas.",
   },
   {
-    question: "¿Qué necesito entregar para comenzar?",
+    question: "¿Qué material debo proporcionar para empezar?",
     answer:
-      "Necesitamos conocer tu negocio, servicios, imágenes, textos o cualquier información que quieras mostrar en la página. También podemos ayudarte a organizar el contenido.",
+      "Información básica de tu negocio, logo, servicios, textos y fotos que quieras incluir. Si no tenés todo listo, te ayudo a estructurarlo.",
   },
   {
-    question: "¿La página queda optimizada para Google?",
+    question: "¿El sitio queda optimizado para buscadores (SEO)?",
     answer:
-      "Aplicamos buenas prácticas de estructura, velocidad y organización del contenido para ayudar a que tu sitio tenga una mejor base para posicionarse.",
+      "Sí, aplico buenas prácticas de estructura, velocidad de carga y etiquetas para asegurar que Google indexe tu web de forma rápida y efectiva.",
   },
   {
-    question: "¿Cuánto cuesta una página web?",
+    question: "¿Cómo se define el costo del proyecto?",
     answer:
-      "El precio depende del tipo de página, cantidad de secciones y funcionalidades necesarias. Podemos preparar una propuesta personalizada según tu proyecto.",
+      "El valor se adapta al tipo de web, cantidad de secciones y características especiales. Escríbeme y preparamos una propuesta personalizada a tu medida.",
   },
 ];
 
@@ -50,69 +57,115 @@ export function FaqSection() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-      <div className="rounded-[20px] border border-white/10 bg-white/5 p-4 lg:p-12">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#A6D63A]">
-            # Preguntas frecuentes
-          </p>
+    <section id="faq" className="relative py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        {/* CONTENEDOR PRINCIPAL */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl lg:p-12">
+          {/* Luz ambiental de fondo */}
+          <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-[#A6D63A]/10 blur-3xl pointer-events-none" />
 
-          <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
-            Resolvemos las dudas más comunes antes de comenzar tu proyecto.
-          </h2>
-
-          <p className="mt-5 text-lg leading-8 text-slate-300">
-            Queremos que tengas claridad sobre cada etapa del proceso y sepas
-            qué esperar al trabajar juntos.
-          </p>
-        </div>
-
-        <div className="mx-auto mt-12 max-w-3xl space-y-4">
-          {faqItems.map((item, index) => {
-            const isOpen = openFaq === index;
-
-            return (
-              <div
-                key={item.question}
-                className="rounded-[14px] border border-white/10 bg-[#081826]/70 p-5 transition-all duration-300 hover:border-[#A6D63A]/30"
-              >
-                <button
-                  className="flex w-full items-center justify-between gap-4 text-left"
-                  onClick={() => setOpenFaq(isOpen ? null : index)}
-                >
-                  <span className="text-base font-semibold text-white sm:text-lg">
-                    {item.question}
-                  </span>
-
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#A6D63A]/10 text-xl text-[#A6D63A]">
-                    {isOpen ? "−" : "+"}
-                  </span>
-                </button>
-
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.p
-                      initial={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        height: "auto",
-                      }}
-                      exit={{
-                        opacity: 0,
-                        height: 0,
-                      }}
-                      className="mt-4 overflow-hidden text-sm leading-7 text-slate-300"
-                    >
-                      {item.answer}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
+          {/* GRID ASIMÉTRICA: IZQUIERDA INFORMACIÓN / DERECHA ACORDEÓN */}
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:items-start">
+            {/* COLUMNA IZQUIERDA: CABECERA Y CTA DIRECTO */}
+            <div className="lg:sticky lg:top-28">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/30 bg-[#A6D63A]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
+                <HelpCircle className="h-3.5 w-3.5" />
+                <span>Preguntas Frecuentes</span>
               </div>
-            );
-          })}
+
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                ¿Tenés dudas antes de{" "}
+                <span className="text-[#A6D63A]">comenzar?</span>
+              </h2>
+
+              <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+                Acá respondo las consultas más habituales. Mi objetivo es que
+                tengas total claridad en cada etapa del proceso.
+              </p>
+
+              {/* BLOQUE CTA A WHATSAPP / CONTACTO */}
+              <div className="mt-8 rounded-2xl border border-white/10 bg-[#081826]/80 p-5 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#A6D63A]/20 text-[#A6D63A]">
+                    <MessageCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white">
+                      ¿Tenés una consulta específica?
+                    </h4>
+                    <p className="text-xs text-slate-400 mt-0.5">
+                      Escribime directamente y lo resolvemos.
+                    </p>
+                  </div>
+                </div>
+
+                <Link
+                  href="#contacto"
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#A6D63A] py-2.5 text-xs font-bold text-slate-900 transition-all hover:bg-[#b8ea42] hover:shadow-[0_0_20px_rgba(166,214,58,0.3)]"
+                >
+                  <span>Hacer una pregunta</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* COLUMNA DERECHA: LISTA DE ACORDEONES */}
+            <div className="space-y-3.5">
+              {faqItems.map((item, index) => {
+                const isOpen = openFaq === index;
+
+                return (
+                  <div
+                    key={item.question}
+                    className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
+                      isOpen
+                        ? "border-[#A6D63A]/50 bg-[#081826]/90 shadow-[0_10px_25px_rgba(166,214,58,0.08)]"
+                        : "border-white/10 bg-[#081826]/60 hover:border-white/20 hover:bg-[#081826]/80"
+                    }`}
+                  >
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between gap-4 p-5 text-left"
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                    >
+                      <span
+                        className={`text-sm font-bold transition-colors sm:text-base ${isOpen ? "text-[#A6D63A]" : "text-white"}`}
+                      >
+                        {item.question}
+                      </span>
+
+                      <div
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 ${
+                          isOpen
+                            ? "border-[#A6D63A]/40 bg-[#A6D63A] text-slate-900"
+                            : "border-white/10 bg-white/5 text-slate-400"
+                        }`}
+                      >
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                        />
+                      </div>
+                    </button>
+
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <p className="px-5 pb-5 text-xs leading-relaxed text-slate-300 sm:text-sm border-t border-white/5 pt-3">
+                            {item.answer}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
