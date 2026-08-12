@@ -294,9 +294,7 @@ export function ContactSection() {
                   </a>
 
                   <a
-                    href={facebook}
-                    target="_blank"
-                    rel="noreferrer"
+                    href="/facebook"
                     aria-label="Facebook"
                     className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1877F2]/20 border border-[#1877F2]/40 text-[#1877F2] transition-all duration-300 hover:bg-[#1877F2] hover:text-white hover:scale-110"
                   >

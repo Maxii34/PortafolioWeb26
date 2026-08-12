@@ -7,16 +7,16 @@ import {
   FaTiktok,
   FaWhatsapp,
 } from "react-icons/fa6";
-import { Terminal, Heart, Mail, MapPin } from "lucide-react";
+import { Terminal, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
-  const instagram = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "#";
+  const instagram =
+    process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
+    "https://www.instagram.com/codemax.dev";
   const numero = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5493816870337";
-  const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL || "#";
-  const tiktok = process.env.NEXT_PUBLIC_TIKTOK_URL || "#";
 
   const mensajeWs = encodeURIComponent(
-    "¡Hola! 👋 Vi tu sitio web CodeMáx.Dev y me interesa obtener información sobre el desarrollo de una página web.",
+    "¡Hola! 👋 Vi tu sitio web CodeMáx.Dev y me interesa obtener información sobre el desarrollo de una página web."
   );
   const urlWhatsapp = `https://wa.me/${numero}?text=${mensajeWs}`;
 
@@ -32,6 +32,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl">
         {/* FILA PRINCIPAL */}
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr] lg:gap-12">
+          
           {/* COLUMNA 1: MARCA Y DESCRIPCIÓN */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <Link
@@ -79,14 +80,14 @@ export default function Footer() {
               Contactos
             </h4>
 
-            {/* INFORMACIÓN DE CONTACTO (CORREO Y DIRECCIÓN) */}
+            {/* INFORMACIÓN DE CONTACTO */}
             <div className="mt-4 flex flex-col gap-2.5 text-sm text-slate-300">
               <a
-                href="mailto:contacto@codemax.dev"
+                href="mailto:codemax-dev@gmail.com"
                 className="flex items-center gap-2.5 transition-colors hover:text-[#A6D63A]"
               >
                 <Mail className="h-4 w-4 shrink-0 text-[#A6D63A]" />
-                <span>codemax-dev@Gmail.com</span>
+                <span>codemax-dev@gmail.com</span>
               </a>
 
               <div className="flex items-center gap-2.5">
@@ -99,46 +100,47 @@ export default function Footer() {
               Conectemos a través de nuestras redes oficiales.
             </p>
 
+            {/* BOTONES DE REDES SOCIALES */}
             <div className="mt-3 flex gap-3">
+              {/* WHATSAPP (Abre enlace externo) */}
               <a
                 href={urlWhatsapp}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-slate-300 transition-all hover:border-[#25D366] hover:bg-[#25D366] hover:text-white hover:scale-110"
               >
                 <FaWhatsapp className="text-base" />
               </a>
 
+              {/* INSTAGRAM (Abre enlace externo) */}
               <a
                 href={instagram}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-slate-300 transition-all hover:border-[#E4405F] hover:bg-[#E4405F] hover:text-white hover:scale-110"
               >
                 <FaInstagram className="text-base" />
               </a>
 
-              <a
-                href={facebook}
-                target="_blank"
-                rel="noreferrer"
+              {/* FACEBOOK (Lleva a 404 intencionalmente) */}
+              <Link
+                href="/facebook"
                 aria-label="Facebook"
                 className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-slate-300 transition-all hover:border-[#1877F2] hover:bg-[#1877F2] hover:text-white hover:scale-110"
               >
                 <FaFacebookF className="text-sm" />
-              </a>
+              </Link>
 
-              <a
-                href={tiktok}
-                target="_blank"
-                rel="noreferrer"
+              {/* TIKTOK (Lleva a 404 intencionalmente) */}
+              <Link
+                href="/tiktok"
                 aria-label="TikTok"
                 className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-slate-300 transition-all hover:border-white hover:bg-black hover:text-white hover:scale-110"
               >
                 <FaTiktok className="text-sm" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

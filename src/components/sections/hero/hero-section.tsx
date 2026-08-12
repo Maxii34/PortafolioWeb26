@@ -39,18 +39,31 @@ export function HeroSection() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            {/* BOTÓN PRINCIPAL CON SHIMMER Y RESPLANDOR CONTINUO */}
             <Link
               href="#contacto"
-              className="w-full sm:w-auto rounded-full bg-[#A6D63A] px-8 py-3.5 text-center font-semibold text-[#081826] transition-all hover:scale-105 hover:bg-[#b8ea42] hover:shadow-[0_0_25px_rgba(166,214,58,0.4)]"
+              className="group relative flex w-full sm:w-auto items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-center font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95 animate-pulse-glow"
             >
-              Solicitar presupuesto
+              {/* Rayo de luz deslumbrante */}
+              <span className="absolute inset-0 -top-[100%] left-0 w-1/2 bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-12 animate-shimmer pointer-events-none" />
+
+              <span className="relative z-10">Solicitar presupuesto</span>
             </Link>
 
+            {/* BOTÓN SECUNDARIO CON ESTILO NEÓN GLASSMORPHISM */}
             <Link
               href="#proyectos"
-              className="w-full sm:w-auto rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-center font-semibold text-white backdrop-blur-sm transition-all hover:border-[#A6D63A] hover:text-[#A6D63A]"
+              className="group relative flex w-full sm:w-auto items-center justify-center gap-2 overflow-hidden rounded-full border border-[#A6D63A]/40 bg-[#081826]/70 px-8 py-3.5 text-center font-semibold text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A] hover:bg-[#A6D63A] hover:text-[#081826] hover:shadow-[0_0_25px_rgba(166,214,58,0.45)] active:scale-95"
             >
-              Ver proyectos
+              {/* Destello sutil de luz interno */}
+              <span className="absolute inset-0 -top-[100%] left-0 w-1/2 bg-gradient-to-r from-transparent via-[#A6D63A]/20 to-transparent skew-x-12 animate-shimmer pointer-events-none" />
+
+              {/* Resplandor neón en expansión al hacer hover */}
+              <span className="absolute -left-2 -top-2 h-6 w-6 rounded-full bg-[#A6D63A]/20 blur-md transition-all duration-500 group-hover:h-full group-hover:w-full group-hover:bg-[#A6D63A]" />
+
+              <span className="relative z-10 font-semibold transition-colors duration-300">
+                Ver proyectos
+              </span>
             </Link>
           </div>
         </motion.div>
