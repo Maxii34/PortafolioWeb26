@@ -1,128 +1,129 @@
 "use client";
 
-import {
-  FaLaptopCode,
-  FaExternalLinkAlt,
-  FaRocket,
-  FaShieldAlt,
-  FaMobileAlt,
-  FaCodeBranch,
-  FaCheckCircle,
-} from "react-icons/fa";
+import Link from "next/link";
+import { ArrowRight, ShieldCheck, Zap, Award } from "lucide-react";
 
 export function AboutSection() {
-  const portafolioDev = process.env.NEXT_PUBLIC_PORTAFOLIODEV_URL || "#";
-
   return (
-    <section id="sobre-mi" className="relative py-16 lg:py-24">
+    <section id="sobre-mi" className="relative py-20 lg:py-32 overflow-hidden">
+      {/* Luz ambiental sutil de fondo */}
+      <div className="absolute top-1/2 -left-32 -z-10 h-96 w-96 -translate-y-1/2 rounded-full bg-[#A6D63A]/10 blur-[120px] pointer-events-none" />
+
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        
-        {/* TARJETA CONTENEDORA GLASSMORPHISM (TEMA OSCURO TÉCNICO) */}
-        <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-8 lg:p-12">
-          
-          {/* Luces de fondo internas */}
-          <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#A6D63A]/10 blur-3xl pointer-events-none" />
-          <div className="absolute -left-16 -bottom-16 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+        {/* LAYOUT EDITORIAL ASIMÉTRICO */}
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+          {/* COLUMNA IZQUIERDA: IMAGEN EDITORIAL CON EFECTO INTERACTIVO EN HOVER (5 COLS) */}
+          <div className="relative lg:col-span-5 flex justify-center">
+            {/* Marco decorativo de luz detrás de la foto (Reacciona en Hover) */}
+            <div className="absolute inset-0 -m-3 rounded-3xl bg-gradient-to-tr from-[#A6D63A]/40 via-cyan-500/20 to-transparent blur-xl opacity-60 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105" />
 
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-12">
-            
-            {/* 1. TARJETA COMPACTA DE PERFIL (FOTO + PROFILE BADGE) */}
-            <div className="flex flex-col items-center justify-center text-center">
-              <div className="relative p-4 sm:p-6 rounded-3xl border border-white/10 bg-[#081826]/80 shadow-lg backdrop-blur-md w-full max-w-sm">
-                
-                {/* Badge Superior */}
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-[#A6D63A]/30 bg-[#A6D63A]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#A6D63A]">
-                  <FaCodeBranch />
-                  <span>Código Limpio & Escalable</span>
-                </div>
+            {/* CONTENEDOR DE LA IMAGEN CON GRUPO DE HOVER */}
+            <div className="group relative w-full max-w-md aspect-[4/5] overflow-hidden rounded-3xl border border-white/15 shadow-2xl transition-all duration-500 hover:border-[#A6D63A]/50 hover:shadow-[0_20px_50px_rgba(166,214,58,0.2)]">
+              {/* IMAGEN: Transición de blanco/negro a color + Zoom suave */}
+              <img
+                src="/Miperfil.jpeg"
+                alt="Maximiliano Ordoñez"
+                className="h-full w-full object-cover object-center filter grayscale contrast-125 transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105 group-hover:saturate-125"
+              />
 
-                {/* Foto Redonda en Marcador */}
-                <div className="relative mx-auto mt-5 h-36 w-36 sm:h-44 sm:w-44">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#A6D63A] to-cyan-400 blur-md opacity-40" />
-                  <img
-                    src="Miperfil.jpeg"
-                    alt="Maximiliano Ordoñez"
-                    className="relative h-full w-full rounded-full object-cover border-2 border-white/20 shadow-xl"
-                  />
-                </div>
+              {/* Degradado oscuro inferior sobre la foto */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#081826] via-transparent to-transparent opacity-85 transition-opacity duration-500 group-hover:opacity-70" />
 
-                {/* Datos rápidos en la foto */}
-                <h3 className="mt-4 text-xl font-extrabold text-white">
+              {/* Nombre flotante sobre la foto */}
+              <div className="absolute bottom-6 left-6 right-6 transition-transform duration-500 group-hover:-translate-y-1">
+                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
+                  CodeMáx.Dev
+                </span>
+                <h3 className="text-2xl font-extrabold text-white">
                   Maximiliano Ordoñez
                 </h3>
+              </div>
+            </div>
+          </div>
 
-                <div className="mt-3 flex justify-center">
-                  <a
-                    href={portafolioDev}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 px-4 py-2 text-xs font-semibold text-slate-200 transition-all hover:border-[#A6D63A] hover:bg-[#A6D63A] hover:text-slate-900"
-                  >
-                    <FaLaptopCode className="text-[#A6D63A] group-hover:text-slate-900" />
-                    <span>Full Stack Developer</span>
-                    <FaExternalLinkAlt className="text-[10px] opacity-60" />
-                  </a>
+          {/* COLUMNA DERECHA: TEXTO EDITORIAL DIRECTO (7 COLS) */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            {/* Tag Superior */}
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#A6D63A]">
+              <span className="h-1.5 w-6 rounded-full bg-[#A6D63A]" />
+              <span>Desarrollo Web de Alto Nivel</span>
+            </div>
+
+            {/* Titular Principal */}
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl leading-[1.15]">
+              Tu marca en manos de un profesional{" "}
+              <span className="text-[#A6D63A]">
+                comprometido con los resultados.
+              </span>
+            </h2>
+
+            {/* Párrafo Comercial Conciso */}
+            <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">
+              Diseño y desarrollo páginas web estratégicas, pensadas para
+              transmitir máxima autoridad, cargar en tiempo récord y convertir
+              visitas en clientes reales. Cada proyecto se trabaja de manera
+              personalizada para asegurar un estándar de calidad impecable.
+            </p>
+
+            {/* 3 PILARES EJECUTIVOS (LISTA LIMPIA SIN CAJAS) */}
+            <div className="mt-8 space-y-4 border-l border-white/10 pl-6">
+              <div className="flex items-start gap-3">
+                <ShieldCheck className="h-5 w-5 text-[#A6D63A] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="text-sm font-bold text-white">
+                    Estándar de Calidad Impecable
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Sitios estables, protegidos y estructurados con código
+                    moderno y limpio.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Zap className="h-5 w-5 text-[#A6D63A] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="text-sm font-bold text-white">
+                    Rendimiento y Carga Ultra-Rápida
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Navegación fluida para que tus usuarios no pierdan un solo
+                    segundo.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Award className="h-5 w-5 text-[#A6D63A] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="text-sm font-bold text-white">
+                    Atención Personalizada
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Acompañamiento directo de principio a fin, sin
+                    intermediarios.
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* 2. TEXTO Y PUNTOS DE VALOR */}
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
-                <span className="h-2 w-2 rounded-full bg-[#A6D63A]" />
-                Sobre mí
-              </div>
+            {/* BOTÓN DE ACCIÓN */}
+            <div className="mt-10 pt-2">
+              <Link
+                href="#contacto"
+                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#bdff22] to-[#A6D63A] px-8 py-3.5 text-xs font-extrabold uppercase tracking-wider text-slate-900 shadow-[0_0_20px_rgba(166,214,58,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(166,214,58,0.6)] active:scale-95 animate-pulse-glow"
+              >
+                {/* Rayo de luz deslumbrante que cruza el botón */}
+                <span className="absolute inset-0 -top-[100%] left-0 w-1/2 bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-12 animate-shimmer pointer-events-none" />
 
-              <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
-                Transformo ideas en páginas web que <span className="text-[#A6D63A]">generan confianza y ventas.</span>
-              </h2>
+                <span className="relative z-10">Hablemos de tu proyecto</span>
 
-              <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
-                Especialista en desarrollo web enfocado en crear plataformas rápidas, atractivas y totalmente adaptadas a las necesidades de cada negocio.
-              </p>
-
-              <blockquote className="mt-4 border-l-2 border-[#A6D63A] pl-3 text-xs sm:text-sm italic font-medium text-slate-300">
-                "No construyo solo páginas web; creo herramientas digitales que ayudan a tu marca a competir y destacar."
-              </blockquote>
-
-              {/* GRILLA COMPACTA DE PUNTOS CLAVE (3 COLUMNAS EN DESKTOP / INLINE EN MOBILE) */}
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#081826]/70 p-3 shadow-sm">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#A6D63A]/15 text-[#A6D63A]">
-                    <FaRocket className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-white">Velocidad Pro</h4>
-                    <p className="text-[10px] text-slate-400">Carga ultrarrápida.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#081826]/70 p-3 shadow-sm">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#A6D63A]/15 text-[#A6D63A]">
-                    <FaMobileAlt className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-white">Responsive</h4>
-                    <p className="text-[10px] text-slate-400">Perfecto en celulares.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#081826]/70 p-3 shadow-sm">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#A6D63A]/15 text-[#A6D63A]">
-                    <FaShieldAlt className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-white">Seguridad</h4>
-                    <p className="text-[10px] text-slate-400">Estructura moderna.</p>
-                  </div>
-                </div>
-              </div>
-
+                {/* Flecha con movimiento al hacer hover */}
+                <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+              </Link>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );

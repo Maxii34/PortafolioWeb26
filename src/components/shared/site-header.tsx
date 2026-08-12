@@ -45,10 +45,15 @@ export function SiteHeader() {
           {/* BOTÓN CONTACTO */}
           <Link
             href="#contacto"
-            className="inline-flex items-center gap-2 rounded-full bg-[#A6D63A] px-5 py-2 font-semibold text-slate-900 transition-all duration-300 hover:scale-105 hover:bg-[#b8ea42] hover:shadow-[0_0_20px_rgba(166,214,58,0.4)]"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-5 py-2 font-semibold text-slate-900 shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95 animate-pulse-glow"
           >
-            <span>Contacto</span>
-            <Send className="h-4 w-4" />
+            {/* Rayo de luz deslumbrante que cruza el botón continuamente */}
+            <span className="absolute inset-0 -top-[100%] left-0 w-1/2 bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-12 animate-shimmer pointer-events-none" />
+
+            <span className="relative z-10">Contacto</span>
+
+            {/* Icono Send con movimiento al hacer hover */}
+            <Send className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
           </Link>
         </nav>
 

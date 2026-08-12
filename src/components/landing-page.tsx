@@ -16,6 +16,7 @@ export function LandingPage() {
       <SiteHeader />
       <main id="inicio">
         <HeroSection />
+        <AboutSection />
         <ServicesSection />
         <BenefitsSection />
         <ProjectsSection />
