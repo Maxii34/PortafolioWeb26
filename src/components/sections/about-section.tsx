@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Zap, Award } from "lucide-react";
 
 export function AboutSection() {
@@ -12,9 +13,15 @@ export function AboutSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* LAYOUT EDITORIAL ASIMÉTRICO */}
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
-          {/* COLUMNA IZQUIERDA: IMAGEN EDITORIAL CON EFECTO INTERACTIVO EN HOVER (5 COLS) */}
-          <div className="relative lg:col-span-5 flex justify-center">
-            {/* Marco decorativo de luz detrás de la foto (Reacciona en Hover) */}
+          {/* COLUMNA IZQUIERDA: IMAGEN CON ENTRADA DESDE LA IZQUIERDA (5 COLS) */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative lg:col-span-5 flex justify-center"
+          >
+            {/* Marco decorativo de luz detrás de la foto */}
             <div className="absolute inset-0 -m-3 rounded-3xl bg-gradient-to-tr from-[#A6D63A]/40 via-cyan-500/20 to-transparent blur-xl opacity-60 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105" />
 
             {/* CONTENEDOR DE LA IMAGEN CON GRUPO DE HOVER */}
@@ -39,10 +46,16 @@ export function AboutSection() {
                 </h3>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* COLUMNA DERECHA: TEXTO EDITORIAL DIRECTO (7 COLS) */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          {/* COLUMNA DERECHA: TEXTO Y CONTENIDOS CON ENTRADA DESDE LA DERECHA (7 COLS) */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="lg:col-span-7 flex flex-col justify-center"
+          >
             {/* Tag Superior */}
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#A6D63A]">
               <span className="h-1.5 w-6 rounded-full bg-[#A6D63A]" />
@@ -65,9 +78,15 @@ export function AboutSection() {
               personalizada para asegurar un estándar de calidad impecable.
             </p>
 
-            {/* 3 PILARES EJECUTIVOS (LISTA LIMPIA SIN CAJAS) */}
+            {/* 3 PILARES EJECUTIVOS (APARICIÓN EN CASCADA / STAGGER) */}
             <div className="mt-8 space-y-4 border-l border-white/10 pl-6">
-              <div className="flex items-start gap-3">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex items-start gap-3"
+              >
                 <ShieldCheck className="h-5 w-5 text-[#A6D63A] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-sm font-bold text-white">
@@ -78,9 +97,15 @@ export function AboutSection() {
                     moderno y limpio.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-3">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex items-start gap-3"
+              >
                 <Zap className="h-5 w-5 text-[#A6D63A] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-sm font-bold text-white">
@@ -91,9 +116,15 @@ export function AboutSection() {
                     segundo.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-3">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="flex items-start gap-3"
+              >
                 <Award className="h-5 w-5 text-[#A6D63A] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-sm font-bold text-white">
@@ -104,11 +135,17 @@ export function AboutSection() {
                     intermediarios.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
-            {/* BOTÓN DE ACCIÓN */}
-            <div className="mt-10 pt-2">
+            {/* BOTÓN DE ACCIÓN CON REVELADO EN FADE-UP */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="mt-10 pt-2"
+            >
               <Link
                 href="#contacto"
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#bdff22] to-[#A6D63A] px-8 py-3.5 text-xs font-extrabold uppercase tracking-wider text-slate-900 shadow-[0_0_20px_rgba(166,214,58,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(166,214,58,0.6)] active:scale-95 animate-pulse-glow"
@@ -121,8 +158,8 @@ export function AboutSection() {
                 {/* Flecha con movimiento al hacer hover */}
                 <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
