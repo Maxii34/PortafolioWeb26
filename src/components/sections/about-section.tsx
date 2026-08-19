@@ -59,7 +59,8 @@ export function AboutSection() {
             {/* Tag Superior */}
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#A6D63A]">
               <span className="h-1.5 w-6 rounded-full bg-[#A6D63A]" />
-              <span>Desarrollo Web de Alto Nivel</span>
+              <span>Desarrollo Web</span>
+              <span className="h-1.5 w-6 rounded-full bg-[#A6D63A]" />
             </div>
 
             {/* Titular Principal */}

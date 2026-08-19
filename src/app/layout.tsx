@@ -13,23 +13,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CodeMáx.Dev | Desarrollo web freelance premium",
+  metadataBase: new URL("https://codemaxdev-sigma.vercel.app"),
+
+  title: "CodeMáx.Dev | Desarrollo Web.",
+
   description:
-    "Diseño y desarrollo de sitios web modernos para negocios, emprendedores y profesionales que quieren crecer con una presencia digital profesional.",
+    "Diseño y desarrollo páginas web profesionales para negocios, emprendedores y profesionales. Landing pages, sitios institucionales y tiendas online.",
+
   keywords: [
     "desarrollo web",
-    "freelance",
+    "diseño web",
+    "páginas web",
     "landing page",
     "sitios web",
+    "tiendas online",
+    "desarrollador web",
     "Next.js",
     "React",
   ],
+
   openGraph: {
-    title: "CodeMáx.Dev | Desarrollo web freelance premium",
+    title: "CodeMáx.Dev | Desarrollo Web.",
     description:
-      "Diseño y desarrollo de sitios web modernos para negocios, emprendedores y profesionales.",
+      "Diseño y desarrollo páginas web profesionales para negocios, emprendedores y profesionales.",
     type: "website",
-    url: "https://codemax.dev",
+    url: "https://codemaxdev-sigma.vercel.app",
+    siteName: "CodeMáx.Dev",
+    locale: "es_AR",
   },
 };
 
