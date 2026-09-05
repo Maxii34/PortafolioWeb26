@@ -27,7 +27,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ duration: 0.4, delay: index * 0.1 }}
       viewport={{ once: true }}
       whileHover={{ y: -6 }}
-      className="group flex h-full min-w-[280px] max-w-[340px] shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-md backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A]/40 hover:bg-white/[0.07] hover:shadow-[0_15px_35px_rgba(166,214,58,0.1)] sm:min-w-[320px]"
+      className="group flex h-full min-w-70 max-w-85 shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/4 shadow-md backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A]/40 hover:bg-white/[0.07] hover:shadow-[0_15px_35px_rgba(166,214,58,0.1)] sm:min-w-[320px]"
     >
       {/* PREVIEW DE IMAGEN */}
       <div className="relative h-48 overflow-hidden bg-slate-900">
@@ -36,7 +36,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           alt={project.title}
           className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#081826] via-[#081826]/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#081826] via-[#081826]/20 to-transparent" />
 
         <span className="absolute left-3.5 top-3.5 rounded-full border border-white/20 bg-slate-900/80 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#A6D63A] backdrop-blur-md">
           {project.type}

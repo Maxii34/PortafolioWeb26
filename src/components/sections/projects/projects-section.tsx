@@ -62,7 +62,7 @@ export function ProjectsSection() {
           {doubleProjects.map((project, index) => (
             <div
               key={`${project.slug || project.title}-${index}`}
-              className="w-[300px] sm:w-[340px] shrink-0"
+              className="w-75 sm:w-85 shrink-0"
             >
               <ProjectCard project={project} index={index % projects.length} />
             </div>
