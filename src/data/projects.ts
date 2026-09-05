@@ -88,4 +88,21 @@ export const projects: Project[] = [
       "Comentarios y valoraciones de clientes",
     ],
   },
+
+  {
+    slug: "Sistema de gestion",
+    title: "IronGim",
+    type: "Sistema de gestión",
+    description:
+      "Una plataforma pensada Controlá socios, ingresos en portería, vencimientos automáticos y planes desde una experiencia rápida y moderna..",
+    cover: "/img/irongim.png",
+    link: "https://irongim-sistema-gestor.vercel.app",
+    features: [
+      "control de ingresos",
+      "Gestión de usuarios",
+      "Panel administrativo de stadisticas",
+      "Control de vencimientos",
+      "Gestión de planes e membrecias"
+    ],
+  },
 ];
