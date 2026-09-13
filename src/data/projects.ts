@@ -105,4 +105,22 @@ export const projects: Project[] = [
       "Gestión de planes e membrecias"
     ],
   },
+  {
+  slug: "gestor-inventario",
+  title: "Gestor de Inventario",
+  type: "Sistema de gestión",
+  description:
+    "Sistema de gestión de inventario y ventas para comercios, con control de stock en tiempo real, roles de usuario, cobros integrados con Mercado Pago y estadísticas de recaudación.",
+  cover: "/img/gestor01.png",
+  link: "https://sistema-inventario-woad.vercel.app/login",
+  features: [
+    "Control de stock con movimientos y ajustes",
+    "Gestión de ventas con múltiples métodos de pago",
+    "Integración de cobros con Mercado Pago (Checkout Pro + webhooks)",
+    "Autenticación con roles (Admin / Vendedor) y refresh tokens",
+    "Estadísticas de recaudación por rango de fechas",
+    "Comprobantes de venta en PDF",
+    "Carga masiva de productos",
+  ],
+},
 ];
