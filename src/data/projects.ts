@@ -123,4 +123,24 @@ export const projects: Project[] = [
     "Carga masiva de productos",
   ],
 },
+  {
+    slug: "sistema-reparaciones-cja",
+    title: "Sistema de Reparaciones C.E.J.A N°2",
+    type: "Sistema de gestión",
+    description:
+      "Una plataforma para talleres de reparación que permite gestionar clientes, equipos y órdenes de trabajo desde el ingreso hasta la entrega, con seguimiento del estado de cada reparación, control de repuestos, pagos, garantías y registro fotográfico.",
+    cover: "/img/reparacion01.png",
+    link: "https://sistemareparaciones.vercel.app/",
+    features: [
+      "Gestión de clientes y equipos",
+      "Órdenes de reparación con seguimiento por estados",
+      "Diagnóstico, presupuestos y autorización del cliente",
+      "Control de repuestos y stock",
+      "Registro de pagos y diferentes medios de pago",
+      "Garantías y reingresos de reparaciones",
+      "Registro fotográfico de los equipos",
+      "Historial y trazabilidad de las reparaciones",
+      "Usuarios con roles Admin y Técnico",
+    ],
+  },
 ];
