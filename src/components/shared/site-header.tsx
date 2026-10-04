@@ -12,6 +12,7 @@ const navLinks = [
   { hash: "#inicio", label: "Inicio", id: "inicio" },
   { hash: "#servicios", label: "Servicios", id: "servicios" },
   { hash: "#proyectos", label: "Trabajos", id: "proyectos" },
+  { hash: "#faq", label: "Dudas", id: "faq" },
 ];
 
 export function SiteHeader() {

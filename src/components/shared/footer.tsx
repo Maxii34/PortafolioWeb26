@@ -31,6 +31,7 @@ export default function Footer() {
     { href: "#inicio", label: "Inicio" },
     { href: "#servicios", label: "Servicios" },
     { href: "#proyectos", label: "Trabajos" },
+    { href: "#faq", label: "Dudas" },
     { href: "#contacto", label: "Contacto" },
   ];
 
