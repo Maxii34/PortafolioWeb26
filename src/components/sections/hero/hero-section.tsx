@@ -3,7 +3,17 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import {
+  ChevronDown,
+  Palette,
+  Zap,
+  Smartphone,
+  Search,
+  MessageCircle,
+  Users,
+  Sliders,
+  ThumbsUp,
+} from "lucide-react";
 import { RevealText } from "@/components/ui/reveal-text";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { projects } from "@/data/projects";
@@ -14,14 +24,14 @@ const HeroScene = dynamic(
 );
 
 const techs = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "E-commerce",
-  "SEO",
-  "Responsive",
-  "APIs",
+  { label: "Diseño profesional", icon: Palette },
+  { label: "Carga ultra rápida", icon: Zap },
+  { label: "Adaptado a celulares", icon: Smartphone },
+  { label: "Posicionamiento en Google", icon: Search },
+  { label: "Botón de WhatsApp", icon: MessageCircle },
+  { label: "Más clientes", icon: Users },
+  { label: "Fácil de administrar", icon: Sliders },
+  { label: "Atención personalizada", icon: ThumbsUp },
 ];
 
 const stats = [
@@ -37,25 +47,12 @@ export function HeroSection() {
 
       {/* CONTENIDO PRINCIPAL */}
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-6 pt-32 text-center lg:px-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/30 bg-[#081826]/70 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-[#A6D63A] backdrop-blur-md"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#A6D63A] opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A6D63A]" />
-          </span>
-          <span>Disponible para nuevos proyectos</span>
-        </motion.div>
-
-        <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl">
-          <RevealText mode="mount" text="Tu negocio o emprendimiento" />
+        <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl">
+          <RevealText mode="mount" text="Llevá tu negocio a internet" />
           <br className="hidden sm:inline" />{" "}
           <RevealText
             mode="mount"
-            text="merece una página web profesional."
+            text="Una web profesional para mostrar lo que hacés y conseguir nuevos clientes."
             delay={0.3}
             wordClassName="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent"
           />
@@ -67,9 +64,8 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-slate-300 sm:text-xl"
         >
-          Diseño de sitios web modernos para emprendedores, negocios y
-          profesionales que quieren transmitir confianza y conseguir más
-          clientes.
+          Diseño y desarrollo sitios web modernos, rápidos y adaptados a
+          celulares para negocios, emprendimientos y profesionales.
         </motion.p>
 
         <motion.div
@@ -138,15 +134,21 @@ export function HeroSection() {
       {/* MARQUEE TECHS */}
       <div className="mask-fade-x relative z-10 w-full overflow-hidden border-t border-white/10 bg-[#081826]/60 py-3 backdrop-blur-md">
         <div className="animate-marquee flex w-max gap-10">
-          {[...techs, ...techs].map((t, i) => (
-            <span
-              key={`${t}-${i}`}
-              className="flex items-center gap-10 text-xs font-bold uppercase tracking-[0.25em] text-slate-400"
-            >
-              {t}
-              <span className="h-1 w-1 rounded-full bg-[#A6D63A]" />
-            </span>
-          ))}
+          {[...techs, ...techs].map((t, i) => {
+            const Icon = t.icon;
+            return (
+              <span
+                key={`${t.label}-${i}`}
+                className="flex items-center gap-10 text-xs font-bold uppercase tracking-[0.25em] text-slate-400"
+              >
+                <span className="flex items-center gap-2.5">
+                  <Icon className="h-4 w-4 shrink-0 text-[#A6D63A]" />
+                  {t.label}
+                </span>
+                <span className="h-1 w-1 rounded-full bg-[#A6D63A]" />
+              </span>
+            );
+          })}
         </div>
       </div>
     </section>

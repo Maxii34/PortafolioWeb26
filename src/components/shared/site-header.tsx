@@ -2,18 +2,25 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Terminal, Send, Menu, X } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { cn } from "@/lib/cn";
 
 const navLinks = [
-  { href: "#inicio", label: "Inicio", id: "inicio" },
-  { href: "#servicios", label: "Servicios", id: "servicios" },
-  { href: "#proyectos", label: "Trabajos", id: "proyectos" },
+  { hash: "#inicio", label: "Inicio", id: "inicio" },
+  { hash: "#servicios", label: "Servicios", id: "servicios" },
+  { hash: "#proyectos", label: "Trabajos", id: "proyectos" },
+  { hash: "#faq", label: "Dudas", id: "faq" },
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  // Desde /proyectos los anchors deben apuntar al home (/#x),
+  // en el home basta con el hash (#x) para el scroll suave.
+  const prefix = pathname === "/" ? "" : "/";
+  const href = (hash: string) => `${prefix}${hash}`;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("inicio");
@@ -60,7 +67,7 @@ export function SiteHeader() {
         >
           {/* LOGO */}
           <Link
-            href="#inicio"
+            href={href("#inicio")}
             className="group flex items-center gap-2.5 text-lg font-semibold uppercase tracking-[0.2em] text-[#A6D63A] transition-all"
           >
             <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#A6D63A]/30 bg-[#A6D63A]/10 transition-transform group-hover:scale-105 group-hover:rotate-6">
@@ -75,8 +82,8 @@ export function SiteHeader() {
           <nav className="hidden items-center gap-8 text-sm md:flex">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
-                href={link.href}
+                key={link.hash}
+                href={href(link.hash)}
                 className={cn(
                   "group relative transition-all duration-300 hover:-translate-y-0.5",
                   active === link.id
@@ -97,7 +104,7 @@ export function SiteHeader() {
             {/* BOTÓN CONTACTO */}
             <MagneticButton strength={14}>
               <Link
-                href="#contacto"
+                href={href("#contacto")}
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-5 py-2 font-semibold text-slate-900 shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95"
               >
                 <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
@@ -132,14 +139,14 @@ export function SiteHeader() {
             <div className="flex flex-col gap-2">
               {navLinks.map((link, i) => (
                 <motion.div
-                  key={link.href}
+                  key={link.hash}
                   initial={{ opacity: 0, x: -28 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -16 }}
                   transition={{ duration: 0.35, delay: 0.08 + i * 0.07 }}
                 >
                   <Link
-                    href={link.href}
+                    href={href(link.hash)}
                     onClick={() => setMobileMenuOpen(false)}
                     className="block border-b border-white/10 py-5 text-3xl font-extrabold text-white transition-colors hover:text-[#A6D63A]"
                   >
@@ -154,7 +161,7 @@ export function SiteHeader() {
                 className="pt-8"
               >
                 <Link
-                  href="#contacto"
+                  href={href("#contacto")}
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex w-full items-center justify-center gap-2 rounded-full bg-[#A6D63A] py-4 font-bold text-slate-900"
                 >

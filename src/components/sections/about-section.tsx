@@ -11,18 +11,18 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 const pillars = [
   {
     icon: ShieldCheck,
-    title: "Estándar de Calidad Impecable",
-    text: "Sitios estables, protegidos y estructurados con código moderno y limpio.",
+    title: "Calidad y desarrollo profesional",
+    text: "Código moderno, estructura sólida y sitios preparados para crecer junto con tu negocio.",
   },
   {
     icon: Zap,
-    title: "Rendimiento y Carga Ultra-Rápida",
-    text: "Navegación fluida para que tus usuarios no pierdan un solo segundo.",
+    title: "Rendimiento y velocidad",
+    text: "Páginas rápidas y optimizadas para ofrecer una navegación fluida desde cualquier dispositivo.",
   },
   {
     icon: Award,
-    title: "Atención Personalizada",
-    text: "Acompañamiento directo de principio a fin, sin intermediarios.",
+    title: "Atención personalizada",
+    text: "Me involucro directamente en cada proyecto para entender lo que necesitás y acompañarte durante todo el proceso.",
   },
 ];
 
@@ -105,9 +105,9 @@ export function AboutSection() {
 
             {/* Titular Principal */}
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-5xl">
-              <RevealText text="Tu marca en manos de un profesional" />{" "}
+              <RevealText text="Una web profesional para que tu negocio" />{" "}
               <RevealText
-                text="comprometido con los resultados."
+                text="transmita confianza y llegue a más clientes."
                 delay={0.25}
                 wordClassName="text-[#A6D63A]"
               />
@@ -115,10 +115,10 @@ export function AboutSection() {
 
             {/* Párrafo Comercial Conciso */}
             <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">
-              Diseño y desarrollo páginas web estratégicas, pensadas para
-              transmitir máxima autoridad, cargar en tiempo récord y convertir
-              visitas en clientes reales. Cada proyecto se trabaja de manera
-              personalizada para asegurar un estándar de calidad impecable.
+              Diseño y desarrollo páginas web modernas, rápidas y adaptadas a
+              cualquier dispositivo. Cada proyecto se construye de forma
+              personalizada, pensando en tu negocio, tus objetivos y en ofrecer
+              una experiencia clara para tus clientes.
             </p>
 
             {/* 3 PILARES EJECUTIVOS (APARICIÓN EN CASCADA / STAGGER) */}
