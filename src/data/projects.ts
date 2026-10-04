@@ -90,7 +90,7 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "Sistema de gestion",
+    slug: "irongim-sistema",
     title: "IronGim",
     type: "Sistema de gestión",
     description:
