@@ -68,7 +68,7 @@ export default function NotFound() {
           </div>
           <div className="mt-2 font-mono text-xs text-slate-300 space-y-1">
             <p><span className="text-red-400">GET</span> /ruta-desconocida <span className="text-red-400">404 (Not Found)</span></p>
-            <p className="text-slate-500">// Redirigiendo sugerida: /inicio</p>
+            <p className="text-slate-500">{"// Redirigiendo sugerida: /inicio"}</p>
           </div>
         </motion.div>
 
