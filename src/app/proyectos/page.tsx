@@ -8,9 +8,9 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectsExplorer } from "./projects-explorer";
 
 export const metadata: Metadata = {
-  title: "Proyectos | CodeMáx.Dev",
+  title: "Trabajos realizados | CodeMáx.Dev",
   description:
-    "Todos los proyectos y trabajos realizados: sistemas de gestión, tiendas online y sitios web profesionales.",
+    "Conocé los proyectos que impulsan negocios reales: sistemas de gestión, tiendas online y sitios web profesionales.",
 };
 
 export default function ProyectosPage() {
@@ -28,10 +28,10 @@ export default function ProyectosPage() {
 
         <SectionHeading
           className="mt-6"
-          eyebrow="Portfolio completo"
-          title="Todos los proyectos que"
-          highlight="combinan estética y conversión."
-          description="Explorá cada trabajo por categoría y entrá al detalle para conocer sus funcionalidades."
+          eyebrow="Trabajos realizados"
+          title="Proyectos que impulsan"
+          highlight="negocios reales."
+          description="Cada trabajo fue diseñado para convertir visitas en clientes. Filtrá por categoría y descubrí el detalle de cada caso."
         />
 
         <div className="mt-10">

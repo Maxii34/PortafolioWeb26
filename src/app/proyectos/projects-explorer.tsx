@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { projects } from "@/data/projects";
-import { ProjectCard } from "@/components/sections/projects/ProjectCard";
+import { ProjectListCard } from "./project-list-card";
 import { cn } from "@/lib/cn";
 
 const ALL = "Todos";
@@ -49,11 +49,7 @@ export function ProjectsExplorer() {
               transition={{ duration: 0.35 }}
               className="flex"
             >
-              <ProjectCard
-                project={project}
-                index={index}
-                className="w-full sm:w-full"
-              />
+              <ProjectListCard project={project} index={index} />
             </motion.div>
           ))}
         </AnimatePresence>
