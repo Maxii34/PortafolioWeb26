@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FolderGit2, Sparkles, CheckCircle2 } from "lucide-react";
+import { FolderGit2, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "./ProjectCard";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 
 const soluciones = [
   "Sistemas de turnos y reservas",
@@ -94,7 +96,7 @@ export function ProjectsSection() {
 
       {/* TRACK HORIZONTAL PINNEADO (DESKTOP) */}
       <div className="mt-12 hidden w-full overflow-hidden py-4 lg:block">
-        <div ref={trackRef} className="flex w-max gap-6 px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]">
+        <div ref={trackRef} className="flex w-max items-stretch gap-6 px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]">
           {projects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
@@ -103,7 +105,7 @@ export function ProjectsSection() {
 
       {/* MARQUEE MOBILE (fallback sin pin) */}
       <div className="mt-12 w-full overflow-hidden py-4 lg:hidden">
-        <div className="animate-marquee flex gap-6">
+        <div className="animate-marquee flex items-stretch gap-6">
           {[...projects, ...projects].map((project, index) => (
             <div
               key={`${project.slug}-${index}`}
@@ -113,6 +115,19 @@ export function ProjectsSection() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* CTA VER TODOS */}
+      <div className="mx-auto mt-10 flex w-full max-w-7xl justify-center px-6 lg:px-10">
+        <MagneticButton>
+          <Link
+            href="/proyectos"
+            className="group inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/40 bg-[#081826]/70 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A] hover:bg-[#A6D63A] hover:text-[#081826] hover:shadow-[0_0_25px_rgba(166,214,58,0.45)]"
+          >
+            <span>Ver todos los proyectos</span>
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </MagneticButton>
       </div>
     </section>
   );
