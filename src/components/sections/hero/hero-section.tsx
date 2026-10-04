@@ -3,7 +3,17 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import {
+  ChevronDown,
+  Palette,
+  Zap,
+  Smartphone,
+  Search,
+  MessageCircle,
+  Users,
+  Sliders,
+  ThumbsUp,
+} from "lucide-react";
 import { RevealText } from "@/components/ui/reveal-text";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { projects } from "@/data/projects";
@@ -14,14 +24,14 @@ const HeroScene = dynamic(
 );
 
 const techs = [
-  "Diseño profesional",
-  "Carga ultra rápida",
-  "Adaptado a celulares",
-  "Posicionamiento en Google",
-  "Botón de WhatsApp",
-  "Más clientes",
-  "Entrega en 7-15 días",
-  "Atención personalizada",
+  { label: "Diseño profesional", icon: Palette },
+  { label: "Carga ultra rápida", icon: Zap },
+  { label: "Adaptado a celulares", icon: Smartphone },
+  { label: "Posicionamiento en Google", icon: Search },
+  { label: "Botón de WhatsApp", icon: MessageCircle },
+  { label: "Más clientes", icon: Users },
+  { label: "Fácil de administrar", icon: Sliders },
+  { label: "Atención personalizada", icon: ThumbsUp },
 ];
 
 const stats = [
@@ -137,15 +147,21 @@ export function HeroSection() {
       {/* MARQUEE TECHS */}
       <div className="mask-fade-x relative z-10 w-full overflow-hidden border-t border-white/10 bg-[#081826]/60 py-3 backdrop-blur-md">
         <div className="animate-marquee flex w-max gap-10">
-          {[...techs, ...techs].map((t, i) => (
-            <span
-              key={`${t}-${i}`}
-              className="flex items-center gap-10 text-xs font-bold uppercase tracking-[0.25em] text-slate-400"
-            >
-              {t}
-              <span className="h-1 w-1 rounded-full bg-[#A6D63A]" />
-            </span>
-          ))}
+          {[...techs, ...techs].map((t, i) => {
+            const Icon = t.icon;
+            return (
+              <span
+                key={`${t.label}-${i}`}
+                className="flex items-center gap-10 text-xs font-bold uppercase tracking-[0.25em] text-slate-400"
+              >
+                <span className="flex items-center gap-2.5">
+                  <Icon className="h-4 w-4 shrink-0 text-[#A6D63A]" />
+                  {t.label}
+                </span>
+                <span className="h-1 w-1 rounded-full bg-[#A6D63A]" />
+              </span>
+            );
+          })}
         </div>
       </div>
     </section>
