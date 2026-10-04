@@ -166,8 +166,8 @@ export default function Footer() {
           </p>
 
           <p className="text-[11px] text-slate-500">
-            v1.3.0 • Actualizado:{" "}
-            <span className="text-slate-400">Agosto 2026</span>
+            v1.4.0 • Actualizado:{" "}
+            <span className="text-slate-400">Octubre 2026</span>
           </p>
 
           <a
