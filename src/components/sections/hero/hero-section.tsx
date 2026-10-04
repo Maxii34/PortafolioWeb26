@@ -14,14 +14,14 @@ const HeroScene = dynamic(
 );
 
 const techs = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "E-commerce",
-  "SEO",
-  "Responsive",
-  "APIs",
+  "Diseño profesional",
+  "Carga ultra rápida",
+  "Adaptado a celulares",
+  "Posicionamiento en Google",
+  "Botón de WhatsApp",
+  "Más clientes",
+  "Entrega en 7-15 días",
+  "Atención personalizada",
 ];
 
 const stats = [
