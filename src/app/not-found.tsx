@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, Home, Terminal, AlertTriangle } from "lucide-react";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 
 export default function NotFound() {
   return (
@@ -79,17 +80,19 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-8 flex flex-col sm:flex-row gap-4"
         >
-          <Link
-            href="/"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#bdff22] to-[#A6D63A] px-8 py-3.5 text-xs font-extrabold uppercase tracking-wider text-slate-900 shadow-[0_0_20px_rgba(166,214,58,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(166,214,58,0.6)] active:scale-95 animate-pulse-glow"
-          >
-            {/* Rayo de luz deslumbrante */}
-            <span className="absolute inset-0 -top-[100%] left-0 w-1/2 bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-12 animate-shimmer pointer-events-none" />
+          <MagneticButton>
+            <Link
+              href="/"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#bdff22] to-[#A6D63A] px-8 py-3.5 text-xs font-extrabold uppercase tracking-wider text-slate-900 shadow-[0_0_20px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(166,214,58,0.6)] active:scale-95"
+            >
+              {/* Rayo de luz deslumbrante */}
+              <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
 
-            <Home className="relative z-10 h-4 w-4" />
-            <span className="relative z-10">Volver al Inicio</span>
-            <ArrowLeft className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
-          </Link>
+              <Home className="relative z-10 h-4 w-4" />
+              <span className="relative z-10">Volver al Inicio</span>
+              <ArrowLeft className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
+            </Link>
+          </MagneticButton>
         </motion.div>
 
       </div>
