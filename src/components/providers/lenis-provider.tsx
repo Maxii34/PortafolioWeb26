@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function LenisProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -15,13 +17,12 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       smoothWheel: true,
     });
 
-    // Integración con GSAP ScrollTrigger si está presente
-    let rafId = 0;
-    const raf = (time: number) => {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    };
-    rafId = requestAnimationFrame(raf);
+    // Integración con GSAP ScrollTrigger (ticker compartido)
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on("scroll", ScrollTrigger.update);
+    const tick = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(tick);
+    gsap.ticker.lagSmoothing(0);
 
     // Scroll suave para anchors internos (#inicio, #contacto, ...)
     const onClick = (event: MouseEvent) => {
@@ -39,7 +40,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     document.addEventListener("click", onClick);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      gsap.ticker.remove(tick);
       document.removeEventListener("click", onClick);
       lenis.destroy();
     };
