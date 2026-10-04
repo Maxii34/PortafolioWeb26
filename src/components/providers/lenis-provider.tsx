@@ -25,13 +25,18 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     gsap.ticker.lagSmoothing(0);
 
     // Scroll suave para anchors internos (#inicio, #contacto, ...)
+    // y para links /#x cuando ya estamos en el home.
     const onClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;
-      const anchor = target?.closest?.('a[href^="#"]') as HTMLAnchorElement | null;
+      const anchor = target?.closest?.(
+        'a[href^="#"], a[href^="/#"]'
+      ) as HTMLAnchorElement | null;
       if (!anchor) return;
-      const hash = anchor.getAttribute("href");
-      if (!hash || hash === "#") return;
+      const raw = anchor.getAttribute("href");
+      if (!raw || raw === "#" || raw === "/#") return;
+      const hash = raw.startsWith("/#") ? raw.slice(1) : raw;
       const el = document.querySelector(hash);
+      // Si el destino no está en esta página, dejar que Next.js navegue.
       if (!el) return;
       event.preventDefault();
       lenis.scrollTo(el as HTMLElement, { offset: -80 });

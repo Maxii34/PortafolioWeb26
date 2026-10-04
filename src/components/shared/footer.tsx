@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   FaFacebookF,
@@ -11,6 +12,9 @@ import {
 import { Terminal, Mail, MapPin, ArrowUp } from "lucide-react";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const prefix = pathname === "/" ? "" : "/";
+  const href = (hash: string) => `${prefix}${hash}`;
   const instagram =
     process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
     "https://www.instagram.com/codemax.dev";
@@ -59,7 +63,7 @@ export default function Footer() {
             className="flex flex-col items-center text-center lg:items-start lg:text-left"
           >
             <Link
-              href="#inicio"
+              href={href("#inicio")}
               className="group flex items-center gap-2.5 text-lg font-semibold uppercase tracking-[0.2em] text-[#A6D63A] transition-all"
             >
               <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#A6D63A]/30 bg-[#A6D63A]/10 transition-transform group-hover:scale-105 group-hover:rotate-6">
@@ -93,7 +97,7 @@ export default function Footer() {
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    href={href(link.href)}
                     className="text-sm font-medium text-slate-300 transition-colors hover:text-[#A6D63A]"
                   >
                     {link.label}
@@ -166,7 +170,7 @@ export default function Footer() {
           </p>
 
           <a
-            href="#inicio"
+            href={href("#inicio")}
             aria-label="Volver arriba"
             className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#A6D63A]/30 bg-[#A6D63A]/10 text-[#A6D63A] transition-all hover:bg-[#A6D63A] hover:text-slate-900"
           >
