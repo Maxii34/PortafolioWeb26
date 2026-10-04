@@ -47,20 +47,7 @@ export function HeroSection() {
 
       {/* CONTENIDO PRINCIPAL */}
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-6 pt-32 text-center lg:px-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/30 bg-[#081826]/70 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-[#A6D63A] backdrop-blur-md"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#A6D63A] opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A6D63A]" />
-          </span>
-          <span>Disponible para nuevos proyectos</span>
-        </motion.div>
-
-        <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl">
+        <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl">
           <RevealText mode="mount" text="Llevá tu negocio a internet" />
           <br className="hidden sm:inline" />{" "}
           <RevealText
