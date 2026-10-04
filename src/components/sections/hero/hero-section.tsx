@@ -51,11 +51,14 @@ export function HeroSection() {
         </motion.div>
 
         <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl">
-          <RevealText text="Tu negocio o emprendimiento" />
-          <br className="hidden sm:inline" />
-          <span className="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent">
-            <RevealText text="merece una página web profesional." delay={0.3} />
-          </span>
+          <RevealText mode="mount" text="Tu negocio o emprendimiento" />
+          <br className="hidden sm:inline" />{" "}
+          <RevealText
+            mode="mount"
+            text="merece una página web profesional."
+            delay={0.3}
+            wordClassName="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent"
+          />
         </h1>
 
         <motion.p

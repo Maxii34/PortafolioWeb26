@@ -105,11 +105,12 @@ export function AboutSection() {
 
             {/* Titular Principal */}
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-5xl">
-              <RevealText text="Tu marca en manos de un profesional" />
-              <span className="text-[#A6D63A]">
-                {" "}
-                <RevealText text="comprometido con los resultados." delay={0.25} />
-              </span>
+              <RevealText text="Tu marca en manos de un profesional" />{" "}
+              <RevealText
+                text="comprometido con los resultados."
+                delay={0.25}
+                wordClassName="text-[#A6D63A]"
+              />
             </h2>
 
             {/* Párrafo Comercial Conciso */}

@@ -41,9 +41,11 @@ export function SectionHeading({
         {highlight ? (
           <>
             {" "}
-            <span className="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent">
-              <RevealText text={highlight} delay={0.25} />
-            </span>
+            <RevealText
+              text={highlight}
+              delay={0.25}
+              wordClassName="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent"
+            />
           </>
         ) : null}
       </h2>
