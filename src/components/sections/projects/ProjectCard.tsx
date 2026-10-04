@@ -45,7 +45,7 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
       {/* DETALLES */}
       <div className="flex flex-1 flex-col p-5">
         <div className="pb-5">
-          <h3 className="text-lg font-bold text-white transition-colors duration-300 group-hover:text-[#A6D63A]">
+          <h3 className="line-clamp-2 min-h-[3.5rem] text-lg font-bold text-white transition-colors duration-300 group-hover:text-[#A6D63A]">
             {project.title}
           </h3>
 

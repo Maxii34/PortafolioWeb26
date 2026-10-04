@@ -160,7 +160,7 @@ export function ProjectsSection() {
           onPointerCancel={endDrag}
           onClickCapture={onClickCapture}
           className={cn(
-            "flex cursor-grab gap-6 overflow-x-auto px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-4",
+            "flex cursor-grab items-stretch gap-6 overflow-x-auto px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-4",
             "select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
             "active:cursor-grabbing"
           )}
