@@ -1,72 +1,150 @@
 "use client";
 
-import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { RevealText } from "@/components/ui/reveal-text";
+import { MagneticButton } from "@/components/ui/magnetic-button";
+import { projects } from "@/data/projects";
+
+const HeroScene = dynamic(
+  () => import("@/components/hero/hero-scene").then((m) => m.HeroScene),
+  { ssr: false }
+);
+
+const techs = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+  "E-commerce",
+  "SEO",
+  "Responsive",
+  "APIs",
+];
+
+const stats = [
+  { value: `+${projects.length}`, label: "Proyectos online" },
+  { value: "100%", label: "Diseño responsive" },
+  { value: "7-15 días", label: "Entrega promedio" },
+];
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] w-full flex items-center justify-center overflow-hidden py-24 lg:py-32 bg-transparent">
-      {/* IMAGEN DE FONDO Y CAPAS DE FUSIÓN */}
-      <div className="absolute inset-0 z-0 h-full w-full">
-        <img
-          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070"
-          alt="Desarrollo Web Profesional"
-          className="h-full w-full object-cover object-center opacity-20"
-        />
-
-        {/* Gradiente suave para integrar la imagen con la rejilla global */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#081826] via-transparent to-[#081826]/70" />
-      </div>
+    <section className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-transparent">
+      <HeroScene />
 
       {/* CONTENIDO PRINCIPAL */}
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-10">
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-6 pt-32 text-center lg:px-10">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/30 bg-[#081826]/70 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-[#A6D63A] backdrop-blur-md"
         >
-          <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-6xl">
-            Tu negocio o emprendimiento <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent">
-              merece una página web profesional.
-            </span>
-          </h1>
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#A6D63A] opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A6D63A]" />
+          </span>
+          <span>Disponible para nuevos proyectos</span>
+        </motion.div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300 sm:text-xl">
-            Diseño de sitios web modernos para emprendedores, negocios y
-            profesionales que quieren transmitir confianza y conseguir más
-            clientes.
-          </p>
+        <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl">
+          <RevealText text="Tu negocio o emprendimiento" />
+          <br className="hidden sm:inline" />
+          <span className="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent">
+            <RevealText text="merece una página web profesional." delay={0.3} />
+          </span>
+        </h1>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            {/* BOTÓN PRINCIPAL CON SHIMMER Y RESPLANDOR CONTINUO */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mx-auto mt-6 max-w-2xl text-lg text-slate-300 sm:text-xl"
+        >
+          Diseño de sitios web modernos para emprendedores, negocios y
+          profesionales que quieren transmitir confianza y conseguir más
+          clientes.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.65 }}
+          className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row"
+        >
+          {/* BOTÓN PRINCIPAL MAGNÉTICO */}
+          <MagneticButton className="w-full sm:w-auto">
             <Link
               href="#contacto"
-              className="group relative flex w-full sm:w-auto items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-center font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95 animate-pulse-glow"
+              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-center font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95"
             >
-              {/* Rayo de luz deslumbrante */}
-              <span className="absolute inset-0 -top-[100%] left-0 w-1/2 bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-12 animate-shimmer pointer-events-none" />
-
+              <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
               <span className="relative z-10">Solicitar presupuesto</span>
             </Link>
+          </MagneticButton>
 
-            {/* BOTÓN SECUNDARIO CON ESTILO NEÓN GLASSMORPHISM */}
+          {/* BOTÓN SECUNDARIO NEÓN GLASSMORPHISM */}
+          <MagneticButton className="w-full sm:w-auto" strength={14}>
             <Link
               href="#proyectos"
-              className="group relative flex w-full sm:w-auto items-center justify-center gap-2 overflow-hidden rounded-full border border-[#A6D63A]/40 bg-[#081826]/70 px-8 py-3.5 text-center font-semibold text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A] hover:bg-[#A6D63A] hover:text-[#081826] hover:shadow-[0_0_25px_rgba(166,214,58,0.45)] active:scale-95"
+              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-[#A6D63A]/40 bg-[#081826]/70 px-8 py-3.5 text-center font-semibold text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A] hover:bg-[#A6D63A] hover:text-[#081826] hover:shadow-[0_0_25px_rgba(166,214,58,0.45)] active:scale-95"
             >
-              {/* Destello sutil de luz interno */}
-              <span className="absolute inset-0 -top-[100%] left-0 w-1/2 bg-gradient-to-r from-transparent via-[#A6D63A]/20 to-transparent skew-x-12 animate-shimmer pointer-events-none" />
-
-              {/* Resplandor neón en expansión al hacer hover */}
-              <span className="absolute -left-2 -top-2 h-6 w-6 rounded-full bg-[#A6D63A]/20 blur-md transition-all duration-500 group-hover:h-full group-hover:w-full group-hover:bg-[#A6D63A]" />
-
               <span className="relative z-10 font-semibold transition-colors duration-300">
                 Ver proyectos
               </span>
             </Link>
-          </div>
+          </MagneticButton>
         </motion.div>
+
+        {/* STATS */}
+        <motion.dl
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-12 grid w-full max-w-xl grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md"
+        >
+          {stats.map((s) => (
+            <div key={s.label} className="px-4 py-4">
+              <dt className="order-2 mt-1 block text-[10px] font-semibold uppercase tracking-widest text-slate-400 sm:text-[11px]">
+                {s.label}
+              </dt>
+              <dd className="order-1 text-xl font-extrabold text-[#A6D63A] sm:text-2xl">
+                {s.value}
+              </dd>
+            </div>
+          ))}
+        </motion.dl>
+      </div>
+
+      {/* SCROLL INDICATOR */}
+      <motion.a
+        href="#sobre-mi"
+        aria-label="Ir a Sobre mí"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="relative z-10 mx-auto mb-6 flex flex-col items-center gap-1 text-slate-400 transition-colors hover:text-[#A6D63A]"
+      >
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em]">Descubrí más</span>
+        <ChevronDown className="animate-scroll-hint h-5 w-5" />
+      </motion.a>
+
+      {/* MARQUEE TECHS */}
+      <div className="mask-fade-x relative z-10 w-full overflow-hidden border-t border-white/10 bg-[#081826]/60 py-3 backdrop-blur-md">
+        <div className="animate-marquee flex w-max gap-10">
+          {[...techs, ...techs].map((t, i) => (
+            <span
+              key={`${t}-${i}`}
+              className="flex items-center gap-10 text-xs font-bold uppercase tracking-[0.25em] text-slate-400"
+            >
+              {t}
+              <span className="h-1 w-1 rounded-full bg-[#A6D63A]" />
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
