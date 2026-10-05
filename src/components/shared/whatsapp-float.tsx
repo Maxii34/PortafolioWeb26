@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa6";
 
 export function WhatsappFloat() {
@@ -12,7 +13,12 @@ export function WhatsappFloat() {
   const url = `https://wa.me/${numero}?text=${mensaje}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 1.4, type: "spring", stiffness: 220, damping: 16 }}
+      className="fixed bottom-6 right-6 z-50"
+    >
       
       {/* BOTÓN CONTENEDOR CON ÁREA DE HOVER EXACTA */}
       <div className="group relative flex items-center justify-center">
@@ -110,6 +116,6 @@ export function WhatsappFloat() {
         </a>
 
       </div>
-    </div>
+    </motion.div>
   );
 }

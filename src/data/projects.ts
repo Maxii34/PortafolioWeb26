@@ -6,6 +6,15 @@ export type Project = {
   cover: string;
   features: string[];
   link: string;
+  // ---- Campos opcionales para la página de detalle (/proyectos/[slug]).
+  // Completá los que tengas; lo que falte simplemente no se muestra.
+  longDescription?: string; // Descripción ampliada del proyecto
+  technologies?: string[]; // Ej: ["Next.js", "Tailwind", "Supabase"]
+  gallery?: string[]; // Rutas a imágenes extra: ["/img/proyecto-02.png", ...]
+  year?: string; // Ej: "2025"
+  client?: string; // Ej: "Clínica Dogtor"
+  role?: string; // Ej: "Diseño + Desarrollo full-stack"
+  results?: string[]; // Ej: ["+40% turnos online", "Carga < 1.5s"]
 };
 
 export const projects: Project[] = [
@@ -90,7 +99,7 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "Sistema de gestion",
+    slug: "irongim-sistema",
     title: "IronGim",
     type: "Sistema de gestión",
     description:

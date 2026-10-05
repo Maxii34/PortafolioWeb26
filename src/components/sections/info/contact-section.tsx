@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 
 // Iconos de Interfaz de Usuario (Lucide)
 import {
@@ -30,7 +31,6 @@ export function ContactSection() {
   const instagram = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "#";
   const numero = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5493816870337";
   const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL || "#";
-
   const {
     register,
     handleSubmit,
@@ -103,9 +103,9 @@ export function ContactSection() {
 
   return (
     <section id="contacto" className="relative py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* CONTENEDOR PRINCIPAL */}
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_25px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl lg:p-12">
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-8 lg:p-12">
           {/* Luz ambiental */}
           <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#A6D63A]/10 blur-3xl pointer-events-none" />
 
@@ -215,18 +215,20 @@ export function ContactSection() {
                   )}
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#A6D63A] px-8 py-3.5 text-sm font-bold text-slate-900 transition-all duration-300 hover:bg-[#b8ea42] hover:shadow-[0_0_25px_rgba(166,214,58,0.35)] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
-                >
-                  <span>
-                    {isSubmitting
-                      ? "Enviando mensaje..."
-                      : "Solicitar Presupuesto"}
-                  </span>
-                  <Send className="h-4 w-4" />
-                </button>
+                <MagneticButton strength={12} className="w-full sm:w-auto">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#A6D63A] px-8 py-3.5 text-sm font-bold text-slate-900 transition-all duration-300 hover:bg-[#b8ea42] hover:shadow-[0_0_25px_rgba(166,214,58,0.35)] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+                  >
+                    <span>
+                      {isSubmitting
+                        ? "Enviando mensaje..."
+                        : "Solicitar Presupuesto"}
+                    </span>
+                    <Send className="h-4 w-4" />
+                  </button>
+                </MagneticButton>
               </form>
             </div>
 
@@ -294,7 +296,9 @@ export function ContactSection() {
                   </a>
 
                   <a
-                    href="/facebook"
+                    href={facebook}
+                    target="_blank"
+                    rel="noreferrer"
                     aria-label="Facebook"
                     className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1877F2]/20 border border-[#1877F2]/40 text-[#1877F2] transition-all duration-300 hover:bg-[#1877F2] hover:text-white hover:scale-110"
                   >

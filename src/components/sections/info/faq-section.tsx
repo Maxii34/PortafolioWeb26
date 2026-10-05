@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 
 const faqItems = [
   {
@@ -58,9 +59,9 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="relative py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* CONTENEDOR PRINCIPAL */}
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl lg:p-12">
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
           {/* Luz ambiental de fondo */}
           <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-[#A6D63A]/10 blur-3xl pointer-events-none" />
 
@@ -99,18 +100,20 @@ export function FaqSection() {
                   </div>
                 </div>
 
-                <Link
-                  href="#contacto"
-                  className="group relative mt-4 flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] py-2.5 text-xs font-bold text-slate-900 shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(166,214,58,0.6)] active:scale-[0.98] animate-pulse-glow"
-                >
-                  {/* Rayo de luz en movimiento continuo */}
-                  <span className="absolute inset-0 -top-[100%] left-0 w-1/2 bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-12 animate-shimmer pointer-events-none" />
+                <MagneticButton strength={12} className="mt-4 w-full">
+                  <Link
+                    href="#contacto"
+                    className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] py-2.5 text-xs font-bold text-slate-900 shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(166,214,58,0.6)] active:scale-[0.98]"
+                  >
+                    {/* Rayo de luz en movimiento continuo */}
+                    <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
 
-                  <span className="relative z-10">Hacer una pregunta</span>
+                    <span className="relative z-10">Hacer una pregunta</span>
 
-                  {/* Flecha con movimiento dinámico en hover */}
-                  <ArrowRight className="relative z-10 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                    {/* Flecha con movimiento dinámico en hover */}
+                    <ArrowRight className="relative z-10 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </MagneticButton>
               </div>
             </div>
 

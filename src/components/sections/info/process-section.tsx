@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   MessageSquareCode,
   PenTool,
@@ -9,6 +11,8 @@ import {
   Rocket,
   GitCommit,
 } from "lucide-react";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const processSteps = [
   {
@@ -49,112 +53,127 @@ const processSteps = [
 ];
 
 export function ProcessSection() {
+  const fillRef = useRef<HTMLDivElement>(null);
+  const desktopRef = useRef<HTMLDivElement>(null);
+
+  // Barra de progreso que se llena con el scroll (desktop)
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.innerWidth < 1024) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        fillRef.current,
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: desktopRef.current,
+            start: "top 75%",
+            end: "bottom 45%",
+            scrub: 0.6,
+          },
+        }
+      );
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section id="proceso" className="relative py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* CONTENEDOR PRINCIPAL */}
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl lg:p-12">
-          
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
           {/* Elemento decorativo de luz */}
-          <div className="absolute -left-20 -bottom-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl pointer-events-none" />
+          <div className="animate-aurora pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
 
-          {/* ENCABEZADO */}
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/30 bg-[#A6D63A]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
-              <GitCommit className="h-3.5 w-3.5" />
-              <span>Flujo de Trabajo</span>
+          <SectionHeading
+            eyebrow="Flujo de Trabajo"
+            title="Un proceso claro para crear tu web"
+            highlight="sin complicaciones."
+            description="Te acompañamos paso a paso, desde la idea inicial hasta la publicación definitiva de tu proyecto."
+          />
+
+          {/* PASOS EN DESKTOP (5 Columnas conectadas por línea de progreso) */}
+          <div ref={desktopRef} className="relative mt-14 hidden lg:block">
+            {/* Línea base + relleno animado */}
+            <div className="absolute inset-x-10 top-11 -z-0 h-0.5 bg-white/10" />
+            <div className="absolute inset-x-10 top-11 -z-0 h-0.5 overflow-hidden">
+              <div
+                ref={fillRef}
+                className="h-full w-full origin-left bg-gradient-to-r from-[#A6D63A] via-emerald-400 to-cyan-400 shadow-[0_0_12px_rgba(166,214,58,0.7)]"
+              />
             </div>
 
-            <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
-              Un proceso claro para crear tu web <span className="text-[#A6D63A]">sin complicaciones.</span>
-            </h2>
-
-            <p className="mt-3 text-sm text-slate-300 sm:text-base leading-relaxed">
-              Te acompañamos paso a paso, desde la idea inicial hasta la publicación definitiva de tu proyecto.
-            </p>
-          </div>
-
-          {/* PASOS EN DESKTOP (5 Columnas conectadas por línea) */}
-          <div className="relative mt-14 hidden lg:block">
-            {/* Línea horizontal de progreso detrás de las tarjetas */}
-            <div className="absolute top-11 left-10 right-10 h-0.5 bg-gradient-to-r from-[#A6D63A]/80 via-emerald-400/40 to-cyan-400/80 -z-0" />
-
-            <div className="grid grid-cols-5 gap-4 relative z-10">
+            <div className="relative z-10 grid grid-cols-5 gap-4">
               {processSteps.map((step, index) => (
-                <ProcessCard key={step.title} step={step} index={index} />
+                <SpotlightCard
+                  key={step.title}
+                  index={index}
+                  className="bg-[#081826]/85 hover:bg-[#081826]/95"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#A6D63A]/30 bg-[#A6D63A]/10 text-[#A6D63A] shadow-md transition-all duration-300 group-hover:bg-[#A6D63A] group-hover:text-slate-900 group-hover:shadow-[0_0_18px_rgba(166,214,58,0.45)]">
+                      <step.icon className="h-5 w-5" />
+                    </div>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-bold text-[#A6D63A]">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  <div className="mt-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                      {step.subtitle}
+                    </span>
+                    <h3 className="text-base font-bold text-white transition-colors group-hover:text-[#A6D63A]">
+                      {step.title.split(". ")[1]}
+                    </h3>
+                  </div>
+
+                  <p className="mt-2 text-xs leading-relaxed text-slate-300">
+                    {step.description}
+                  </p>
+                </SpotlightCard>
               ))}
             </div>
           </div>
 
-          {/* CARRUSEL MOBILE COMPACTO */}
+          {/* CARRUSEL MOBILE */}
           <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 lg:hidden">
             {processSteps.map((step, index) => (
               <div key={step.title} className="min-w-[82%] snap-center">
-                <ProcessCard step={step} index={index} />
+                <SpotlightCard index={index} className="bg-[#081826]/85">
+                  <div className="flex items-center justify-between">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#A6D63A]/30 bg-[#A6D63A]/10 text-[#A6D63A]">
+                      <step.icon className="h-5 w-5" />
+                    </div>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-bold text-[#A6D63A]">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                      {step.subtitle}
+                    </span>
+                    <h3 className="text-base font-bold text-white">
+                      {step.title.split(". ")[1]}
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-300">
+                    {step.description}
+                  </p>
+                </SpotlightCard>
               </div>
             ))}
           </div>
 
-          <p className="mt-2 text-center text-[11px] text-slate-400 lg:hidden">
-            ← Deslizá para ver las etapas del proceso →
+          <p className="mt-2 flex items-center justify-center gap-2 text-center text-[11px] text-slate-400 lg:hidden">
+            <GitCommit className="h-3.5 w-3.5 text-[#A6D63A]" />
+            Deslizá para ver las etapas del proceso →
           </p>
-
         </div>
       </div>
     </section>
-  );
-}
-
-function ProcessCard({
-  step,
-  index,
-}: {
-  step: {
-    icon: React.ComponentType<{ className?: string }>;
-    title: string;
-    subtitle: string;
-    description: string;
-  };
-  index: number;
-}) {
-  const Icon = step.icon;
-
-  return (
-    <motion.article
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -4 }}
-      className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#081826]/85 p-5 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A]/40 hover:bg-[#081826]/95 hover:shadow-[0_10px_25px_rgba(166,214,58,0.1)]"
-    >
-      <div>
-        {/* CABECERA DE PASO CON ICONO */}
-        <div className="flex items-center justify-between">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#A6D63A]/30 bg-[#A6D63A]/10 text-[#A6D63A] shadow-md transition-colors group-hover:bg-[#A6D63A] group-hover:text-slate-900">
-            <Icon className="h-5 w-5" />
-          </div>
-
-          <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-[10px] font-bold text-[#A6D63A]">
-            0{index + 1}
-          </span>
-        </div>
-
-        {/* TITULO Y SUBTITULO */}
-        <div className="mt-4">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-            {step.subtitle}
-          </span>
-          <h3 className="text-base font-bold text-white transition-colors group-hover:text-[#A6D63A]">
-            {step.title.split(". ")[1]}
-          </h3>
-        </div>
-
-        <p className="mt-2 text-xs leading-relaxed text-slate-300">
-          {step.description}
-        </p>
-      </div>
-    </motion.article>
   );
 }
