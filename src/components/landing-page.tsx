@@ -1,6 +1,7 @@
 import { AboutSection } from "./sections/about-section";
 import { BenefitsSection } from "./sections/info/benefits-section";
 import { ContactSection } from "./sections/info/contact-section";
+import { CoreServicesSection } from "./sections/core-services-section";
 import { FaqSection } from "./sections/info/faq-section";
 import { HeroSection } from "./sections/hero/hero-section";
 import { ProcessSection } from "./sections/info/process-section";
@@ -17,6 +18,7 @@ export function LandingPage() {
       <main id="inicio">
         <HeroSection />
         <AboutSection />
+        <CoreServicesSection />
         <ServicesSection />
         <BenefitsSection />
         <ProjectsSection />
