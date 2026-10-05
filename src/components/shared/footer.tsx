@@ -20,7 +20,6 @@ export default function Footer() {
     "https://www.instagram.com/codemax.dev";
   const numero = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5493816870337";
   const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL || "#";
-  const tiktok = process.env.NEXT_PUBLIC_TIKTOK_URL || "#";
 
   const mensajeWs = encodeURIComponent(
     "¡Hola! 👋 Vi tu sitio web CodeMáx.Dev y me interesa obtener información sobre el desarrollo de una página web."
@@ -39,7 +38,7 @@ export default function Footer() {
     { href: urlWhatsapp, label: "WhatsApp", icon: FaWhatsapp, hover: "hover:border-[#25D366] hover:bg-[#25D366]", external: true },
     { href: instagram, label: "Instagram", icon: FaInstagram, hover: "hover:border-[#E4405F] hover:bg-[#E4405F]", external: true },
     { href: facebook, label: "Facebook", icon: FaFacebookF, hover: "hover:border-[#1877F2] hover:bg-[#1877F2]", external: true },
-    { href: tiktok, label: "TikTok", icon: FaTiktok, hover: "hover:border-white hover:bg-black", external: true },
+    { href: "/tiktok", label: "TikTok (próximamente)", icon: FaTiktok, hover: "hover:border-white hover:bg-black", external: false },
   ];
 
   return (
@@ -142,18 +141,29 @@ export default function Footer() {
 
             {/* BOTONES DE REDES SOCIALES */}
             <div className="mt-3 flex gap-3">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className={`flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all hover:text-white hover:scale-110 ${s.hover}`}
-                >
-                  <s.icon className="text-base" />
-                </a>
-              ))}
+              {socials.map((s) =>
+                s.external ? (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all hover:text-white hover:scale-110 ${s.hover}`}
+                  >
+                    <s.icon className="text-base" />
+                  </a>
+                ) : (
+                  <Link
+                    key={s.label}
+                    href={s.href}
+                    aria-label={s.label}
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all hover:text-white hover:scale-110 ${s.hover}`}
+                  >
+                    <s.icon className="text-base" />
+                  </Link>
+                )
+              )}
             </div>
           </motion.div>
         </div>
