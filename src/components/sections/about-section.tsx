@@ -39,7 +39,7 @@ export function AboutSection() {
       {/* Luz ambiental sutil de fondo */}
       <div className="animate-aurora pointer-events-none absolute -left-32 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-[#A6D63A]/10 blur-[120px]" />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* LAYOUT EDITORIAL ASIMÉTRICO */}
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           {/* COLUMNA IZQUIERDA: IMAGEN CON PARALLAX (5 COLS) */}

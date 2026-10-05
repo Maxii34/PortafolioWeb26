@@ -88,7 +88,7 @@ export function ProjectsSection() {
 
   return (
     <section id="proyectos" className="relative overflow-hidden py-20 lg:py-28">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* ENCABEZADO */}
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="flex flex-col gap-4 lg:col-span-9">
@@ -171,7 +171,7 @@ export function ProjectsSection() {
         </div>
 
         {/* BARRA DE PROGRESO */}
-        <div className="mx-auto mt-6 max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="h-1 overflow-hidden rounded-full bg-white/10">
             <div
               className="h-full rounded-full bg-gradient-to-r from-[#A6D63A] to-cyan-400 transition-[width] duration-150"

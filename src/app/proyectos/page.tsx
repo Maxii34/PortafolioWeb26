@@ -17,7 +17,7 @@ export default function ProyectosPage() {
   return (
     <div className="min-h-screen text-white">
       <SiteHeader />
-      <main className="mx-auto max-w-7xl px-6 pb-24 pt-32 lg:px-10 lg:pt-40">
+      <main className="mx-auto max-w-7xl px-4 pb-24 pt-32 sm:px-6 lg:px-10 lg:pt-40">
         <Link
           href="/#proyectos"
           className="inline-flex items-center gap-2 text-sm font-semibold text-slate-400 transition-colors hover:text-[#A6D63A]"

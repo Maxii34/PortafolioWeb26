@@ -59,9 +59,9 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="relative py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* CONTENEDOR PRINCIPAL */}
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl lg:p-12">
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
           {/* Luz ambiental de fondo */}
           <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-[#A6D63A]/10 blur-3xl pointer-events-none" />
 

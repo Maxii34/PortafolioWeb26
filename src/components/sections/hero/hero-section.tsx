@@ -46,7 +46,7 @@ export function HeroSection() {
       <HeroScene />
 
       {/* CONTENIDO PRINCIPAL */}
-      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-6 pt-32 text-center lg:px-10">
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-4 pt-32 text-center sm:px-6 lg:px-10">
         <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl">
           <RevealText mode="mount" text="Llevá tu negocio a internet" />
           <br className="hidden sm:inline" />{" "}

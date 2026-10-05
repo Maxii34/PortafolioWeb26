@@ -58,7 +58,7 @@ export default async function ProyectoDetallePage({
   return (
     <div className="min-h-screen text-white">
       <SiteHeader />
-      <main className="mx-auto max-w-7xl px-6 pb-24 pt-32 lg:px-10 lg:pt-40">
+      <main className="mx-auto max-w-7xl px-4 pb-24 pt-32 sm:px-6 lg:px-10 lg:pt-40">
         <div className="flex items-center justify-between">
           <Link
             href="/proyectos"

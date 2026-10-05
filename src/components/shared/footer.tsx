@@ -42,7 +42,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#05111a] px-6 pb-8 pt-12 lg:px-10">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#05111a] px-4 pb-8 pt-12 sm:px-6 lg:px-10">
       {/* Marca gigante de fondo */}
       <div
         aria-hidden="true"
