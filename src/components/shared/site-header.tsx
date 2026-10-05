@@ -4,15 +4,25 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Terminal, Send, Menu, X } from "lucide-react";
+import {
+  Terminal,
+  Send,
+  Menu,
+  X,
+  Home,
+  Layers,
+  FolderGit2,
+  HelpCircle,
+  ArrowUpRight,
+} from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { cn } from "@/lib/cn";
 
 const navLinks = [
-  { hash: "#inicio", label: "Inicio", id: "inicio" },
-  { hash: "#servicios", label: "Servicios", id: "servicios" },
-  { hash: "#proyectos", label: "Trabajos", id: "proyectos" },
-  { hash: "#faq", label: "Dudas", id: "faq" },
+  { hash: "#inicio", label: "Inicio", id: "inicio", icon: Home },
+  { hash: "#servicios", label: "Servicios", id: "servicios", icon: Layers },
+  { hash: "#proyectos", label: "Trabajos", id: "proyectos", icon: FolderGit2 },
+  { hash: "#faq", label: "Dudas", id: "faq", icon: HelpCircle },
 ];
 
 export function SiteHeader() {
@@ -134,42 +144,52 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 flex flex-col justify-center bg-[#081826]/95 px-8 backdrop-blur-2xl md:hidden"
+            className="fixed inset-0 z-40 flex flex-col overflow-y-auto bg-[#081826]/95 px-5 pb-8 pt-28 backdrop-blur-2xl md:hidden"
           >
-            <div className="flex flex-col gap-2">
+            <p className="px-1 text-[11px] font-bold uppercase tracking-[0.3em] text-slate-500">
+              Menú
+            </p>
+            <div className="mt-3 flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.hash}
-                  initial={{ opacity: 0, x: -28 }}
+                  initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -16 }}
-                  transition={{ duration: 0.35, delay: 0.08 + i * 0.07 }}
+                  exit={{ opacity: 0, x: -12 }}
+                  transition={{ duration: 0.3, delay: 0.06 + i * 0.06 }}
+                  className={cn(i > 0 && "border-t border-white/5")}
                 >
                   <Link
                     href={href(link.hash)}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block border-b border-white/10 py-5 text-3xl font-extrabold text-white transition-colors hover:text-[#A6D63A]"
+                    className="flex items-center gap-3 px-4 py-3.5 transition-colors active:bg-white/5"
                   >
-                    {link.label}
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#A6D63A]/25 bg-[#A6D63A]/10">
+                      <link.icon className="h-4 w-4 text-[#A6D63A]" />
+                    </span>
+                    <span className="font-display text-lg font-bold tracking-tight text-white">
+                      {link.label}
+                    </span>
+                    <ArrowUpRight className="ml-auto h-4 w-4 text-slate-500" />
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.35, delay: 0.35 }}
-                className="pt-8"
-              >
-                <Link
-                  href={href("#contacto")}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#A6D63A] py-4 font-bold text-slate-900"
-                >
-                  <span>Contacto</span>
-                  <Send className="h-4 w-4" />
-                </Link>
-              </motion.div>
             </div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.32 }}
+              className="mt-4"
+            >
+              <Link
+                href={href("#contacto")}
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#A6D63A] to-[#beff2d] py-3 text-sm font-bold text-slate-900 shadow-[0_0_18px_rgba(166,214,58,0.35)]"
+              >
+                <span>Contacto</span>
+                <Send className="h-4 w-4" />
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
