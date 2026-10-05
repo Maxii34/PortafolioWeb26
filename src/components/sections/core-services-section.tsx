@@ -19,7 +19,7 @@ const services = [
     tileGlow: "shadow-[0_0_28px_rgba(166,214,58,0.35)]",
     beam: "from-transparent via-[#A6D63A] to-transparent",
     cardGlow: "hover:shadow-[0_25px_70px_rgba(166,214,58,0.18)]",
-    price: "Desde $249.000",
+    price: "Desde $120.000",
     priceNote: "ARS · final según alcance",
     details: [
       "Diseño personalizado responsive",
@@ -39,7 +39,7 @@ const services = [
     tileGlow: "shadow-[0_0_28px_rgba(103,232,249,0.35)]",
     beam: "from-transparent via-cyan-300 to-transparent",
     cardGlow: "hover:shadow-[0_25px_70px_rgba(103,232,249,0.15)]",
-    price: "Desde $449.000",
+    price: "Desde $180.000",
     priceNote: "ARS · final según alcance",
     details: [
       "Hasta 5 secciones a medida",
@@ -59,7 +59,7 @@ const services = [
     tileGlow: "shadow-[0_0_28px_rgba(110,231,183,0.35)]",
     beam: "from-transparent via-emerald-300 to-transparent",
     cardGlow: "hover:shadow-[0_25px_70px_rgba(110,231,183,0.15)]",
-    price: "Desde $799.000",
+    price: "Desde $290.000",
     priceNote: "ARS · final según alcance",
     details: [
       "Catálogo, carrito y cobros online",
