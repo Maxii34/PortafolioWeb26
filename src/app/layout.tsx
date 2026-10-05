@@ -3,6 +3,15 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/providers/lenis-provider";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+import {
+  SITE_DESCRIPTION,
+  SITE_EMAIL,
+  SITE_LOCALE,
+  SITE_LOCATION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
+import { faqItems } from "@/data/faq";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,35 +29,89 @@ const display = Space_Grotesk({
   weight: ["500", "600", "700"],
 });
 
+const OG_TITLE = `Diseño Web Profesional para Negocios | ${SITE_NAME}`;
+const OG_IMAGE = "/opengraph-image";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codemaxdev-sigma.vercel.app"),
+  metadataBase: new URL(SITE_URL),
 
-  title: "CodeMáx.Dev | Desarrollo Web.",
+  title: {
+    default: OG_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
 
-  description:
-    "Diseño y desarrollo páginas web profesionales para negocios, emprendedores y profesionales. Landing pages, sitios institucionales y tiendas online.",
+  description: SITE_DESCRIPTION,
 
-  keywords: [
-    "desarrollo web",
-    "diseño web",
-    "páginas web",
-    "landing page",
-    "sitios web",
-    "tiendas online",
-    "desarrollador web",
-    "Next.js",
-    "React",
-  ],
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
-    title: "CodeMáx.Dev | Desarrollo Web.",
-    description:
-      "Diseño y desarrollo páginas web profesionales para negocios, emprendedores y profesionales.",
+    title: OG_TITLE,
+    description: SITE_DESCRIPTION,
     type: "website",
-    url: "https://codemaxdev-sigma.vercel.app",
-    siteName: "CodeMáx.Dev",
-    locale: "es_AR",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: SITE_LOCALE,
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} — Diseño y desarrollo web profesional`,
+      },
+    ],
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: OG_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#negocio`,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      url: SITE_URL,
+      email: SITE_EMAIL,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: SITE_LOCATION,
+      },
+      priceRange: "$$",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#sitio`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      inLanguage: SITE_LOCALE,
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -62,6 +125,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${display.variable} h-full antialiased scroll-smooth`}
     >
       <body className="relative min-h-full flex flex-col bg-[#081826] font-sans text-white selection:bg-[#A6D63A] selection:text-[#081826]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <LenisProvider>
           <ScrollProgress />
           <div className="noise-overlay" aria-hidden="true" />

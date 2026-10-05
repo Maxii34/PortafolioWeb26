@@ -29,10 +29,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-  if (!project) return { title: "Proyecto no encontrado | CodeMáx.Dev" };
+  if (!project) return { title: "Proyecto no encontrado" };
   return {
-    title: `${project.title} | CodeMáx.Dev`,
+    title: project.title,
     description: project.description,
+    alternates: { canonical: `/proyectos/${slug}` },
   };
 }
 

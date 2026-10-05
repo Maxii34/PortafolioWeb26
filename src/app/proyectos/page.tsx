@@ -8,9 +8,10 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectsExplorer } from "./projects-explorer";
 
 export const metadata: Metadata = {
-  title: "Trabajos realizados | CodeMáx.Dev",
+  title: "Trabajos realizados",
   description:
     "Conocé los proyectos que impulsan negocios reales: sistemas de gestión, tiendas online y sitios web profesionales.",
+  alternates: { canonical: "/proyectos" },
 };
 
 export default function ProyectosPage() {
