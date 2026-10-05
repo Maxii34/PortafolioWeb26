@@ -93,7 +93,7 @@ export function ServicesSection() {
           >
             <Link
               href="#contacto"
-              className="flex h-full min-h-[220px] flex-col justify-between overflow-hidden rounded-2xl border border-[#A6D63A]/40 bg-gradient-to-br from-[#A6D63A]/15 via-white/5 to-transparent p-6 shadow-md backdrop-blur-md transition-all hover:border-[#A6D63A] hover:shadow-[0_10px_30px_rgba(166,214,58,0.15)]"
+              className="flex h-full min-h-55 flex-col justify-between overflow-hidden rounded-2xl border border-[#A6D63A]/40 bg-linear-to-br from-[#A6D63A]/15 via-white/5 to-transparent p-6 shadow-md backdrop-blur-md transition-all hover:border-[#A6D63A] hover:shadow-[0_10px_30px_rgba(166,214,58,0.15)]"
             >
               <div className="flex items-start justify-between">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#A6D63A] text-slate-900 shadow-[0_0_20px_rgba(166,214,58,0.4)]">
@@ -136,7 +136,7 @@ export function ServicesSection() {
           <div className="min-w-[80%] snap-center">
             <Link
               href="#contacto"
-              className="flex h-full min-h-[200px] flex-col justify-between rounded-2xl border border-[#A6D63A]/40 bg-gradient-to-br from-[#A6D63A]/15 via-white/5 to-transparent p-6 backdrop-blur-md"
+              className="flex h-full min-h-50 flex-col justify-between rounded-2xl border border-[#A6D63A]/40 bg-linear-to-br from-[#A6D63A]/15 via-white/5 to-transparent p-6 backdrop-blur-md"
             >
               <div className="flex items-start justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#A6D63A] text-slate-900">
