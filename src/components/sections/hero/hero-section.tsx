@@ -52,7 +52,7 @@ export function HeroSection() {
           <br className="hidden sm:inline" />{" "}
           <RevealText
             mode="mount"
-            text="Una web profesional para mostrar lo que hacés y conseguir nuevos clientes."
+            text="Webs rápidas que atraen clientes."
             delay={0.3}
             wordClassName="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent"
           />
@@ -64,8 +64,8 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-slate-300 sm:text-xl"
         >
-          Diseño y desarrollo sitios web modernos, rápidos y adaptados a
-          celulares para negocios, emprendimientos y profesionales.
+          Diseño páginas modernas y adaptadas a celulares para negocios y
+          profesionales.
         </motion.p>
 
         <motion.div
