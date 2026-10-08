@@ -12,17 +12,17 @@ const pillars = [
   {
     icon: ShieldCheck,
     title: "Calidad y desarrollo profesional",
-    text: "Código moderno, estructura sólida y sitios preparados para crecer junto con tu negocio.",
+    text: "Código moderno y sólido, listo para crecer con tu negocio.",
   },
   {
     icon: Zap,
     title: "Rendimiento y velocidad",
-    text: "Páginas rápidas y optimizadas para ofrecer una navegación fluida desde cualquier dispositivo.",
+    text: "Carga rápida y fluida en cualquier dispositivo.",
   },
   {
     icon: Award,
     title: "Atención personalizada",
-    text: "Me involucro directamente en cada proyecto para entender lo que necesitás y acompañarte durante todo el proceso.",
+    text: "Trato directo y acompañamiento en todo el proceso.",
   },
 ];
 
@@ -35,7 +35,7 @@ export function AboutSection() {
   const imgY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
-    <section id="sobre-mi" className="relative overflow-hidden py-20 lg:py-32">
+    <section id="sobre-mi" className="relative overflow-hidden py-14 lg:py-20">
       {/* Luz ambiental sutil de fondo */}
       <div className="animate-aurora pointer-events-none absolute -left-32 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-[#A6D63A]/10 blur-[120px]" />
 
@@ -115,10 +115,8 @@ export function AboutSection() {
 
             {/* Párrafo Comercial Conciso */}
             <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">
-              Diseño y desarrollo páginas web modernas, rápidas y adaptadas a
-              cualquier dispositivo. Cada proyecto se construye de forma
-              personalizada, pensando en tu negocio, tus objetivos y en ofrecer
-              una experiencia clara para tus clientes.
+              Diseño páginas a medida, rápidas y adaptadas a cualquier
+              dispositivo, pensadas para tus objetivos y tus clientes.
             </p>
 
             {/* 3 PILARES EJECUTIVOS (APARICIÓN EN CASCADA / STAGGER) */}
