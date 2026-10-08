@@ -4,26 +4,14 @@ import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ShieldCheck, Zap, Award } from "lucide-react";
+import { ArrowRight, GraduationCap, BadgeCheck, Cpu } from "lucide-react";
 import { RevealText } from "@/components/ui/reveal-text";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
-const pillars = [
-  {
-    icon: ShieldCheck,
-    title: "Calidad y desarrollo profesional",
-    text: "Código moderno y sólido, listo para crecer con tu negocio.",
-  },
-  {
-    icon: Zap,
-    title: "Rendimiento y velocidad",
-    text: "Carga rápida y fluida en cualquier dispositivo.",
-  },
-  {
-    icon: Award,
-    title: "Atención personalizada",
-    text: "Trato directo y acompañamiento en todo el proceso.",
-  },
+const highlights = [
+  { icon: GraduationCap, label: "Formación continua" },
+  { icon: BadgeCheck, label: "Buenas prácticas" },
+  { icon: Cpu, label: "Tecnología actual" },
 ];
 
 export function AboutSection() {
@@ -79,7 +67,7 @@ export function AboutSection() {
               {/* Nombre flotante sobre la foto */}
               <div className="absolute inset-x-6 bottom-6 transition-transform duration-500 group-hover:-translate-y-1">
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
-                  CodeMáx.Dev
+                  Desarrollador Full Stack
                 </span>
                 <h3 className="text-2xl font-extrabold text-white">
                   Maximiliano Ordoñez
@@ -99,47 +87,51 @@ export function AboutSection() {
             {/* Tag Superior */}
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#A6D63A]">
               <span className="h-1.5 w-6 rounded-full bg-[#A6D63A]" />
-              <span>Desarrollo Web</span>
+              <span>Sobre mí</span>
               <span className="h-1.5 w-6 rounded-full bg-[#A6D63A]" />
             </div>
 
             {/* Titular Principal */}
             <h2 className="mt-4 font-display text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-5xl">
-              <RevealText text="Una web profesional para que tu negocio" />{" "}
+              <RevealText text="Desarrollo soluciones web" />{" "}
               <RevealText
-                text="transmita confianza y llegue a más clientes."
+                text="con una visión profesional."
                 delay={0.25}
                 wordClassName="text-[#A6D63A]"
               />
             </h2>
 
-            {/* Párrafo Comercial Conciso */}
             <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">
-              Diseño páginas a medida, rápidas y adaptadas a cualquier
-              dispositivo, pensadas para tus objetivos y tus clientes.
+              Soy desarrollador Full Stack, con formación especializada y
+              actualización constante en nuevas tecnologías y herramientas de
+              desarrollo.
+            </p>
+            <p className="mt-3 text-base leading-relaxed text-slate-300 sm:text-lg">
+              Trabajo en cada proyecto buscando combinar{" "}
+              <strong className="font-semibold text-white">
+                calidad, funcionalidad
+              </strong>{" "}
+              y una{" "}
+              <strong className="font-semibold text-white">
+                buena experiencia para el usuario
+              </strong>
+              .
             </p>
 
-            {/* 3 PILARES EJECUTIVOS (APARICIÓN EN CASCADA / STAGGER) */}
-            <div className="mt-8 space-y-4 border-l border-white/10 pl-6">
-              {pillars.map((pillar, i) => (
-                <motion.div
-                  key={pillar.title}
-                  initial={{ opacity: 0, y: 15 }}
+            {/* Diferenciales */}
+            <div className="mt-8 flex flex-wrap items-center gap-2.5">
+              {highlights.map((h, i) => (
+                <motion.span
+                  key={h.label}
+                  initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                  className="group flex items-start gap-3"
+                  transition={{ duration: 0.45, delay: 0.4 + i * 0.1 }}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200 backdrop-blur-md transition-colors hover:border-[#A6D63A]/40 hover:text-white"
                 >
-                  <pillar.icon className="mt-0.5 h-5 w-5 shrink-0 text-[#A6D63A] transition-transform duration-300 group-hover:scale-125" />
-                  <div>
-                    <h4 className="text-sm font-bold text-white">
-                      {pillar.title}
-                    </h4>
-                    <p className="mt-0.5 text-xs text-slate-400">
-                      {pillar.text}
-                    </p>
-                  </div>
-                </motion.div>
+                  <h.icon className="h-4 w-4 shrink-0 text-[#A6D63A]" />
+                  {h.label}
+                </motion.span>
               ))}
             </div>
 
