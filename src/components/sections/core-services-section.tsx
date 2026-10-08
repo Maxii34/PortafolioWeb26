@@ -235,17 +235,17 @@ export function CoreServicesSection() {
                           ))}
                         </ul>
 
-                        {/* PRECIO */}
-                        <div className="mt-6 flex max-w-xl flex-wrap items-end justify-between gap-4 border-t border-white/10 pt-5">
+                        {/* PRESUPUESTO A MEDIDA (precios ocultos UX 2026-10-07) */}
+                        <div className="mt-6 flex max-w-xl flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5">
                           <div>
                             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
                               Inversión
                             </p>
-                            <p className="font-display mt-1 text-4xl font-bold tracking-tight text-white">
-                              {service.price}
+                            <p className="font-display mt-1 text-2xl font-bold tracking-tight text-white">
+                              Presupuesto a medida
                             </p>
                             <p className="mt-1 text-[11px] font-medium text-slate-500">
-                              {service.priceNote}
+                              Contame tu idea y te cotizo sin compromiso
                             </p>
                           </div>
                           <Link

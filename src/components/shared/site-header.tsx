@@ -20,7 +20,7 @@ import { cn } from "@/lib/cn";
 
 const navLinks = [
   { hash: "#inicio", label: "Inicio", id: "inicio", icon: Home },
-  { hash: "#servicios", label: "Servicios", id: "servicios", icon: Layers },
+  { hash: "#servicios-principales", label: "Servicios", id: "servicios-principales", icon: Layers },
   { hash: "#proyectos", label: "Trabajos", id: "proyectos", icon: FolderGit2 },
   { hash: "#faq", label: "Dudas", id: "faq", icon: HelpCircle },
 ];

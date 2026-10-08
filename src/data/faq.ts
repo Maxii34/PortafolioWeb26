@@ -7,41 +7,26 @@ export const faqItems: FaqItem[] = [
   {
     question: "¿Cuánto tarda crear una página web?",
     answer:
-      "El tiempo depende de las funcionalidades del proyecto, pero un sitio web profesional suele entregarse en un plazo de entre 7 y 15 días hábiles.",
+      "Un sitio profesional suele entregarse en 7 a 15 días hábiles, según secciones y funcionalidades.",
   },
   {
     question: "¿Cómo es el proceso de trabajo?",
     answer:
-      "Primero conversamos tu idea, diseñamos la propuesta visual y, tras tu aprobación, desarrollamos el sitio completo mostrando avances hasta el lanzamiento.",
+      "Simple: conversamos tu idea, te muestro el diseño y luego desarrollo el sitio con avances hasta publicarlo.",
   },
   {
-    question: "¿Necesito contratar hosting y dominio?",
+    question: "¿Se verá bien en celulares y en Google?",
     answer:
-      "No te preocupes por la parte técnica. Te asesoro y ayudo a configurar el mejor hosting y dominio para que tu web funcione perfecta.",
+      "Sí. Todo es responsive y con SEO base: carga rápida, estructura y etiquetas para que Google te indexe bien.",
   },
   {
-    question: "¿La página se verá bien en celulares?",
+    question: "¿Puedo pedir ajustes y qué material necesito?",
     answer:
-      "Sí, 100%. Todos los proyectos están desarrollados con arquitectura Responsive, adaptándose perfectamente a smartphones, tablets y PC.",
-  },
-  {
-    question: "¿Puedo solicitar ajustes durante el desarrollo?",
-    answer:
-      "Por supuesto. Revisamos avances periódicamente para realizar las modificaciones necesarias y garantizar que el resultado cumpla con tus expectativas.",
-  },
-  {
-    question: "¿Qué material debo proporcionar para empezar?",
-    answer:
-      "Información básica de tu negocio, logo, servicios, textos y fotos que quieras incluir. Si no tenés todo listo, te ayudo a estructurarlo.",
-  },
-  {
-    question: "¿El sitio queda optimizado para buscadores (SEO)?",
-    answer:
-      "Sí, aplico buenas prácticas de estructura, velocidad de carga y etiquetas para asegurar que Google indexe tu web de forma rápida y efectiva.",
+      "Sí, revisamos avances y ajustamos hasta que quede como querés. Solo necesito logo, textos y fotos; si te falta algo, te ayudo a armarlo.",
   },
   {
     question: "¿Cómo se define el costo del proyecto?",
     answer:
-      "El valor se adapta al tipo de web, cantidad de secciones y características especiales. Escríbeme y preparamos una propuesta personalizada a tu medida.",
+      "Según tipo de web, secciones y funciones especiales. Contame tu idea y te preparo un presupuesto a medida sin compromiso.",
   },
 ];
