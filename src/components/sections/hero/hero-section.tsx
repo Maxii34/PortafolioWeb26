@@ -72,7 +72,7 @@ function GenericLaptopMock() {
               <div className="h-6 w-20 rounded-full border border-white/20 bg-white/5" />
             </div>
           </div>
-          <div className="h-24 rounded-xl bg-gradient-to-br from-[#A6D63A]/50 via-emerald-300/25 to-cyan-400/35 sm:h-28" />
+          <div className="h-24 rounded-xl bg-linear-to-br from-[#A6D63A]/50 via-emerald-300/25 to-cyan-400/35 sm:h-28" />
         </div>
         <div className="grid grid-cols-3 gap-2.5">
           {[0, 1, 2].map((i) => (
@@ -103,7 +103,7 @@ function GenericPhoneMock() {
           <div className="h-4 w-4 rounded-md bg-[#A6D63A]/70" />
           <div className="h-1.5 w-12 rounded-full bg-white/15" />
         </div>
-        <div className="h-16 rounded-xl bg-gradient-to-br from-[#A6D63A]/50 via-emerald-300/25 to-cyan-400/35" />
+        <div className="h-16 rounded-xl bg-linear-to-br from-[#A6D63A]/50 via-emerald-300/25 to-cyan-400/35" />
         <div className="h-2 w-3/4 rounded-full bg-white/20" />
         <div className="h-2 w-1/2 rounded-full bg-white/10" />
         <div className="h-6 w-full rounded-full bg-[#A6D63A]/90" />
@@ -126,7 +126,7 @@ function GenericPhoneMock() {
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-transparent">
+    <section className="relative flex min-h-svh w-full flex-col overflow-hidden bg-transparent">
       <HeroScene />
 
       {/* CONTENIDO PRINCIPAL */}
@@ -138,7 +138,7 @@ export function HeroSection() {
             mode="mount"
             text="Webs rápidas que atraen clientes."
             delay={0.3}
-            wordClassName="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent"
+            wordClassName="bg-linear-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent"
           />
         </h1>
 
@@ -162,19 +162,19 @@ export function HeroSection() {
           {/* Resplandor detrás (mismo tono que el texto) */}
           <div
             aria-hidden="true"
-            className="absolute left-1/2 top-1/2 -z-0 h-[115%] w-[115%] -translate-x-1/2 -translate-y-1/2 rounded-[32px] bg-[radial-gradient(ellipse_at_center,rgba(166,214,58,0.22),rgba(34,211,238,0.10),transparent_70%)] blur-2xl"
+            className="absolute left-1/2 top-1/2 z-0 h-[115%] w-[115%] -translate-x-1/2 -translate-y-1/2 rounded-4xl bg-[radial-gradient(ellipse_at_center,rgba(166,214,58,0.22),rgba(34,211,238,0.10),transparent_70%)] blur-2xl"
           />
           <div
-            className="animate-float-slow relative [transform:perspective(1200px)_rotateX(8deg)]"
+            className="animate-float-slow relative transform-[perspective(1200px)_rotateX(8deg)]"
           >
             <GenericLaptopMock />
             {/* Fundido inferior: el visual se disuelve hacia los botones */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-16 rounded-b-2xl bg-gradient-to-t from-[#081826] via-[#081826]/60 to-transparent"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-16 rounded-b-2xl bg-linear-to-t from-[#081826] via-[#081826]/60 to-transparent"
             />
             {/* Base laptop */}
-            <div className="relative mx-auto h-2.5 w-[92%] rounded-b-2xl bg-gradient-to-b from-white/20 to-white/5" />
+            <div className="relative mx-auto h-2.5 w-[92%] rounded-b-2xl bg-linear-to-b from-white/20 to-white/5" />
             <div className="relative mx-auto h-1 w-[70%] rounded-b-xl bg-white/10" />
           </div>
 
@@ -220,9 +220,9 @@ export function HeroSection() {
           <MagneticButton className="w-full sm:w-auto">
             <Link
               href="#contacto"
-              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-center font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95"
+              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-center font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95"
             >
-              <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+              <span className="animate-shimmer pointer-events-none absolute inset-0 -top-full left-0 w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/70 to-transparent" />
               <span className="relative z-10">Solicitar presupuesto</span>
             </Link>
           </MagneticButton>

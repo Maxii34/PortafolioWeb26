@@ -86,7 +86,7 @@ function LandingMock() {
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#081826]/90 shadow-2xl">
       <BrowserBar />
       <div className="space-y-3 p-5">
-        <div className="h-14 rounded-xl bg-gradient-to-r from-[#A6D63A]/50 via-emerald-300/30 to-cyan-400/40" />
+        <div className="h-14 rounded-xl bg-linear-to-r from-[#A6D63A]/50 via-emerald-300/30 to-cyan-400/40" />
         <div className="h-2.5 w-3/4 rounded-full bg-white/15" />
         <div className="h-2.5 w-1/2 rounded-full bg-white/10" />
         <div className="h-8 w-28 rounded-full bg-[#A6D63A] shadow-[0_0_18px_rgba(166,214,58,0.5)]" />
@@ -136,7 +136,7 @@ function StoreMock() {
               key={i}
               className="space-y-2 rounded-xl border border-white/10 bg-white/5 p-2.5"
             >
-              <div className="h-12 rounded-lg bg-gradient-to-br from-emerald-300/30 to-cyan-400/20" />
+              <div className="h-12 rounded-lg bg-linear-to-br from-emerald-300/30 to-cyan-400/20" />
               <div className="h-2 w-3/4 rounded-full bg-white/15" />
               <div className="h-5 w-14 rounded-full bg-[#A6D63A]/80" />
             </div>
@@ -153,7 +153,7 @@ export function CoreServicesSection() {
   return (
     <section id="servicios-principales" className="relative py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
+        <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
           <div className="animate-aurora pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#A6D63A]/10 blur-3xl" />
 
           <SectionHeading
@@ -177,7 +177,7 @@ export function CoreServicesSection() {
                   <div
                     aria-hidden="true"
                     className={cn(
-                      "-mx-6 -mt-6 mb-2 h-[3px] bg-gradient-to-r opacity-70 transition-opacity duration-500 group-hover:opacity-100",
+                      "-mx-6 -mt-6 mb-2 h-[3px] bg-linear-to-r opacity-70 transition-opacity duration-500 group-hover:opacity-100",
                       service.beam
                     )}
                   />
@@ -191,7 +191,7 @@ export function CoreServicesSection() {
                     >
                       <span
                         aria-hidden="true"
-                        className="font-display hidden bg-gradient-to-b from-white/25 to-white/0 bg-clip-text text-7xl font-bold leading-none text-transparent sm:block lg:text-8xl"
+                        className="font-display hidden bg-linear-to-b from-white/25 to-white/0 bg-clip-text text-7xl font-bold leading-none text-transparent sm:block lg:text-8xl"
                       >
                         {service.number}
                       </span>
@@ -303,9 +303,9 @@ export function CoreServicesSection() {
             <MagneticButton className="mt-6">
               <Link
                 href="#contacto"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-sm font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)]"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-sm font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)]"
               >
-                <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+                <span className="animate-shimmer pointer-events-none absolute inset-0 -top-full left-0 w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/70 to-transparent" />
                 <span className="relative z-10">Hablar sobre mi proyecto</span>
                 <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>

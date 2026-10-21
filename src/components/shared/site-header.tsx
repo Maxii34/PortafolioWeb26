@@ -115,9 +115,9 @@ export function SiteHeader() {
             <MagneticButton strength={14}>
               <Link
                 href={href("#contacto")}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-5 py-2 font-semibold text-slate-900 shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-5 py-2 font-semibold text-slate-900 shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)] active:scale-95"
               >
-                <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+                <span className="animate-shimmer pointer-events-none absolute inset-0 -top-full left-0 w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/70 to-transparent" />
                 <span className="relative z-10">Contacto</span>
                 <Send className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1" />
               </Link>
@@ -184,7 +184,7 @@ export function SiteHeader() {
               <Link
                 href={href("#contacto")}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#A6D63A] to-[#beff2d] py-3 text-sm font-bold text-slate-900 shadow-[0_0_18px_rgba(166,214,58,0.35)]"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#A6D63A] to-[#beff2d] py-3 text-sm font-bold text-slate-900 shadow-[0_0_18px_rgba(166,214,58,0.35)]"
               >
                 <span>Contacto</span>
                 <Send className="h-4 w-4" />

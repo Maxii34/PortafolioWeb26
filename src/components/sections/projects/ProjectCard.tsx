@@ -42,7 +42,7 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
           draggable={false}
           className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#081826] via-[#081826]/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#081826] via-[#081826]/20 to-transparent" />
 
         <span className="absolute left-3.5 top-3.5 rounded-full border border-white/20 bg-slate-900/80 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#A6D63A] backdrop-blur-md">
           {project.type}

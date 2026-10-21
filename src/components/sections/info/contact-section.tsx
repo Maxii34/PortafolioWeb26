@@ -105,7 +105,7 @@ export function ContactSection() {
     <section id="contacto" className="relative py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* CONTENEDOR PRINCIPAL */}
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-8 lg:p-12">
+        <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-8 lg:p-12">
           {/* Luz ambiental */}
           <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#A6D63A]/10 blur-3xl pointer-events-none" />
 
@@ -245,7 +245,7 @@ export function ContactSection() {
                 </p>
 
                 {/* TARJETA DE WHATSAPP DIRECTO */}
-                <div className="mt-6 rounded-2xl border border-[#A6D63A]/30 bg-gradient-to-br from-[#A6D63A]/15 to-transparent p-5">
+                <div className="mt-6 rounded-2xl border border-[#A6D63A]/30 bg-linear-to-br from-[#A6D63A]/15 to-transparent p-5">
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
                     Contacto Rápido
                   </span>

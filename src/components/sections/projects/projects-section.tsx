@@ -187,7 +187,7 @@ export function ProjectsSection() {
         <div className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-10">
           <div className="h-1 overflow-hidden rounded-full bg-white/10">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-[#A6D63A] to-cyan-400 transition-[width] duration-150"
+              className="h-full rounded-full bg-linear-to-r from-[#A6D63A] to-cyan-400 transition-[width] duration-150"
               style={{ width: `${Math.max(progress * 100, 6)}%` }}
             />
           </div>
