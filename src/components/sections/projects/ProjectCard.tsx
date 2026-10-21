@@ -32,7 +32,7 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
       <Link
         href={detailHref}
         aria-label={`Ver detalles de ${project.title}`}
-        className="relative block h-48 overflow-hidden bg-slate-900"
+        className="relative block h-48 overflow-hidden bg-slate-950"
       >
         <Image
           src={project.cover}
@@ -40,7 +40,7 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
           fill
           sizes="(max-width: 640px) 300px, 340px"
           draggable={false}
-          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          className="object-contain object-center"
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#081826] via-[#081826]/20 to-transparent" />
 
