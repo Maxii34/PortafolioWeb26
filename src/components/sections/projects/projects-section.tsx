@@ -21,6 +21,8 @@ const soluciones = [
   "Automatizaciones",
 ];
 
+const newestProjects = [...projects].reverse();
+
 export function ProjectsSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -174,11 +176,11 @@ export function ProjectsSection() {
           onClickCapture={onClickCapture}
           className={cn(
             "flex cursor-grab items-stretch gap-6 overflow-x-auto px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-4",
-            "select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+            "select-none scrollbar-none [&::-webkit-scrollbar]:hidden",
             "active:cursor-grabbing"
           )}
         >
-          {projects.map((project, index) => (
+          {newestProjects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
@@ -203,10 +205,10 @@ export function ProjectsSection() {
           data-lenis-prevent
           className={cn(
             "flex snap-x snap-mandatory items-stretch gap-6 overflow-x-auto px-4 pb-4 sm:px-6",
-            "scroll-px-4 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            "scroll-px-4 select-none scrollbar-none [&::-webkit-scrollbar]:hidden"
           )}
         >
-          {projects.map((project, index) => (
+          {newestProjects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
