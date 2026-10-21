@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTiktok,
-  FaWhatsapp,
-} from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { Terminal, Mail, MapPin, ArrowUp } from "lucide-react";
 
 export default function Footer() {
@@ -22,24 +17,23 @@ export default function Footer() {
   const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL || "#";
 
   const mensajeWs = encodeURIComponent(
-    "¡Hola! 👋 Vi tu sitio web CodeMáx.Dev y me interesa obtener información sobre el desarrollo de una página web."
+    "¡Hola! 👋 Vi tu sitio web CodeMáx y me interesa obtener información sobre el desarrollo de una página web."
   );
   const urlWhatsapp = `https://wa.me/${numero}?text=${mensajeWs}`;
 
   const navLinks = [
     { href: "#inicio", label: "Inicio" },
-    { href: "#servicios", label: "Servicios" },
+    { href: "#servicios-principales", label: "Servicios" },
     { href: "#proyectos", label: "Trabajos" },
     { href: "#faq", label: "Dudas" },
     { href: "#contacto", label: "Contacto" },
   ];
 
   const socials = [
-    { href: urlWhatsapp, label: "WhatsApp", icon: FaWhatsapp, hover: "hover:border-[#25D366] hover:bg-[#25D366]", external: true },
-    { href: instagram, label: "Instagram", icon: FaInstagram, hover: "hover:border-[#E4405F] hover:bg-[#E4405F]", external: true },
-    { href: facebook, label: "Facebook", icon: FaFacebookF, hover: "hover:border-[#1877F2] hover:bg-[#1877F2]", external: true },
-    { href: "/tiktok", label: "TikTok (próximamente)", icon: FaTiktok, hover: "hover:border-white hover:bg-black", external: false },
-  ];
+    { href: urlWhatsapp, label: "WhatsApp", icon: FaWhatsapp, hover: "hover:border-[#25D366] hover:bg-[#25D366]" },
+    { href: instagram, label: "Instagram", icon: FaInstagram, hover: "hover:border-[#E4405F] hover:bg-[#E4405F]" },
+    { href: facebook, label: "Facebook", icon: FaFacebookF, hover: "hover:border-[#1877F2] hover:bg-[#1877F2]" },
+  ].filter((s) => s.href && s.href !== "#");
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#05111a] px-4 pb-8 pt-12 sm:px-6 lg:px-10">
@@ -70,7 +64,7 @@ export default function Footer() {
                 <Terminal className="h-5 w-5 text-[#A6D63A]" />
               </div>
               <span>
-                CodeMáx<span className="text-white">.Dev</span>
+                Code<span className="text-white">Máx</span>
               </span>
             </Link>
 
@@ -141,29 +135,18 @@ export default function Footer() {
 
             {/* BOTONES DE REDES SOCIALES */}
             <div className="mt-3 flex gap-3">
-              {socials.map((s) =>
-                s.external ? (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className={`flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all hover:text-white hover:scale-110 ${s.hover}`}
-                  >
-                    <s.icon className="text-base" />
-                  </a>
-                ) : (
-                  <Link
-                    key={s.label}
-                    href={s.href}
-                    aria-label={s.label}
-                    className={`flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all hover:text-white hover:scale-110 ${s.hover}`}
-                  >
-                    <s.icon className="text-base" />
-                  </Link>
-                )
-              )}
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className={`flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all hover:text-white hover:scale-110 ${s.hover}`}
+                >
+                  <s.icon className="text-base" />
+                </a>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -171,7 +154,7 @@ export default function Footer() {
         {/* PIE INFERIOR (COPYRIGHT) */}
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-center sm:flex-row sm:text-left">
           <p className="text-xs text-slate-400">
-            © 2026 <span className="font-semibold text-white">CodeMáx.Dev</span>
+            © 2026 <span className="font-semibold text-white">CodeMáx</span>
             . Todos los derechos reservados.
           </p>
 

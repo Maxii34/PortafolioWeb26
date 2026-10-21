@@ -51,7 +51,9 @@ export function ProjectsSection() {
     el.scrollBy({ left: dir * w, behavior: "smooth" });
   };
 
-  // Arrastre con mouse (en touch el navegador lo maneja nativo)
+  // Arrastre con mouse (en touch el navegador lo maneja nativo).
+  // Importante: no capturamos el puntero al presionar, porque eso anula los
+  // clicks de los enlaces dentro de las tarjetas. Sólo capturamos al arrastrar.
   const onPointerDown = (e: React.PointerEvent) => {
     const el = trackRef.current;
     if (!el || e.pointerType === "touch") return;
@@ -61,7 +63,6 @@ export function ProjectsSection() {
       startScroll: el.scrollLeft,
       moved: false,
     };
-    el.setPointerCapture(e.pointerId);
   };
 
   const onPointerMove = (e: React.PointerEvent) => {
@@ -69,12 +70,23 @@ export function ProjectsSection() {
     const d = drag.current;
     if (!d.down || !el) return;
     const dx = e.clientX - d.startX;
-    if (Math.abs(dx) > 6) d.moved = true;
-    el.scrollLeft = d.startScroll - dx;
+    if (!d.moved && Math.abs(dx) > 6) {
+      d.moved = true;
+      try {
+        el.setPointerCapture(e.pointerId);
+      } catch {
+        // El puntero pudo haberse liberado antes de capturarlo.
+      }
+    }
+    if (d.moved) el.scrollLeft = d.startScroll - dx;
   };
 
   const endDrag = () => {
     drag.current.down = false;
+  };
+
+  const onPointerLeave = () => {
+    if (!drag.current.moved) drag.current.down = false;
   };
 
   // Si se arrastró, no disparar los links de la card
@@ -158,6 +170,7 @@ export function ProjectsSection() {
           onPointerMove={onPointerMove}
           onPointerUp={endDrag}
           onPointerCancel={endDrag}
+          onPointerLeave={onPointerLeave}
           onClickCapture={onClickCapture}
           className={cn(
             "flex cursor-grab items-stretch gap-6 overflow-x-auto px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] py-4",
@@ -184,18 +197,22 @@ export function ProjectsSection() {
         </div>
       </div>
 
-      {/* MARQUEE MOBILE (sin cambios) */}
-      <div className="mt-12 w-full overflow-hidden py-4 lg:hidden">
-        <div className="animate-marquee flex items-stretch gap-6">
-          {[...projects, ...projects].map((project, index) => (
-            <div
-              key={`${project.slug}-${index}`}
-              className="w-75 shrink-0 sm:w-85"
-            >
-              <ProjectCard project={project} index={index % projects.length} />
-            </div>
+      {/* CARRUSEL MOBILE: deslizable, con botones y enlaces funcionales */}
+      <div className="mt-12 w-full lg:hidden">
+        <div
+          data-lenis-prevent
+          className={cn(
+            "flex snap-x snap-mandatory items-stretch gap-6 overflow-x-auto px-4 pb-4 sm:px-6",
+            "scroll-px-4 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          )}
+        >
+          {projects.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
+        <p className="mt-1 text-center text-[11px] uppercase tracking-[0.25em] text-slate-500">
+          Deslizá para explorar →
+        </p>
       </div>
 
       {/* CTA VER TODOS */}

@@ -98,7 +98,7 @@ export default async function ProyectoDetallePage({
                 href="/#contacto"
                 className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/40 bg-[#081826]/70 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A] hover:bg-[#A6D63A] hover:text-[#081826]"
               >
-                <span>Quiero algo así</span>
+                <span>Quiero algo similar</span>
               </Link>
             </MagneticButton>
           </div>

@@ -51,7 +51,7 @@ export function WhatsappFloat() {
 
               <div>
                 <p className="text-[11px] font-bold leading-tight text-slate-900">
-                  CodeMáx<span className="text-[#25D366]">.Dev</span>
+                  CodeMáx
                 </p>
 
                 <div className="flex items-center gap-1 mt-0.5">

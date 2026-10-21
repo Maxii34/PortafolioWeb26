@@ -114,7 +114,7 @@ export default function NotFound() {
 
       {/* PIE */}
       <div className="absolute bottom-6 text-center text-xs text-slate-500">
-        © 2026 <span className="font-semibold text-slate-300">CodeMáx.Dev</span>
+        © 2026 <span className="font-semibold text-slate-300">CodeMáx</span>
       </div>
     </div>
   );

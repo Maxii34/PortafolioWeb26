@@ -39,7 +39,7 @@ export function ContactSection() {
   } = useForm<FormData>();
 
   const mensajeWs = encodeURIComponent(
-    "¡Hola! 👋 Vi tu sitio web CodeMáx.Dev y me interesa obtener información sobre el desarrollo de una página web para mi negocio. ¿Podemos conversar?",
+    "¡Hola! 👋 Vi tu sitio web CodeMáx y me interesa obtener información sobre el desarrollo de una página web para mi negocio. ¿Podemos conversar?",
   );
 
   const urlWhatsapp = `https://wa.me/${numero}?text=${mensajeWs}`;
@@ -285,25 +285,29 @@ export function ContactSection() {
                     <FaWhatsapp className="text-xl" />
                   </a>
 
-                  <a
-                    href={instagram}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Instagram"
-                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E4405F]/20 border border-[#E4405F]/40 text-[#E4405F] transition-all duration-300 hover:bg-[#E4405F] hover:text-white hover:scale-110"
-                  >
-                    <FaInstagram className="text-xl" />
-                  </a>
+                  {instagram !== "#" ? (
+                    <a
+                      href={instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Instagram"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E4405F]/20 border border-[#E4405F]/40 text-[#E4405F] transition-all duration-300 hover:bg-[#E4405F] hover:text-white hover:scale-110"
+                    >
+                      <FaInstagram className="text-xl" />
+                    </a>
+                  ) : null}
 
-                  <a
-                    href={facebook}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Facebook"
-                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1877F2]/20 border border-[#1877F2]/40 text-[#1877F2] transition-all duration-300 hover:bg-[#1877F2] hover:text-white hover:scale-110"
-                  >
-                    <FaFacebookF className="text-lg" />
-                  </a>
+                  {facebook !== "#" ? (
+                    <a
+                      href={facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Facebook"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1877F2]/20 border border-[#1877F2]/40 text-[#1877F2] transition-all duration-300 hover:bg-[#1877F2] hover:text-white hover:scale-110"
+                    >
+                      <FaFacebookF className="text-lg" />
+                    </a>
+                  ) : null}
                 </div>
               </div>
             </div>

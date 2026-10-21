@@ -84,7 +84,7 @@ export function SiteHeader() {
               <Terminal className="h-5 w-5 text-[#A6D63A]" />
             </div>
             <span>
-              CodeMáx<span className="text-white">.Dev</span>
+              Code<span className="text-white">Máx</span>
             </span>
           </Link>
 
