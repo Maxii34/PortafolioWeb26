@@ -22,12 +22,12 @@ export function ProjectListCard({
       transition={{ duration: 0.45, delay: Math.min(index * 0.06, 0.3) }}
       viewport={{ once: true, margin: "-40px" }}
       whileHover={{ y: -6 }}
-      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-md backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A]/40 hover:shadow-[0_20px_45px_rgba(166,214,58,0.12)]"
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/4 shadow-md backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A]/40 hover:shadow-[0_20px_45px_rgba(166,214,58,0.12)]"
     >
       {/* PORTADA GRANDE */}
       <Link
         href={`/proyectos/${project.slug}`}
-        className="relative block aspect-[16/10] shrink-0 overflow-hidden bg-slate-900"
+        className="relative block aspect-16/10 shrink-0 overflow-hidden bg-slate-900"
       >
         <Image
           src={project.cover}
@@ -36,7 +36,7 @@ export function ProjectListCard({
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#081826]/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#081826]/80 via-transparent to-transparent" />
         <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-slate-900/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#A6D63A] backdrop-blur-md">
           {project.type}
         </span>
@@ -53,12 +53,12 @@ export function ProjectListCard({
           </h3>
         </Link>
 
-        <p className="mt-2 line-clamp-2 min-h-[3rem] text-sm leading-relaxed text-slate-300">
+        <p className="mt-2 line-clamp-2 min-h-12 text-sm leading-relaxed text-slate-300">
           {project.description}
         </p>
 
         {/* FUNCIONALIDADES DESTACADAS */}
-        <ul className="mt-4 min-h-[102px] space-y-2">
+        <ul className="mt-4 min-h-25.5 space-y-2">
           {project.features.slice(0, 4).map((feature) => (
             <li key={feature} className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#A6D63A]" />

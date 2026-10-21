@@ -37,7 +37,7 @@ export default function NotFound() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="relative my-2 select-none"
         >
-          <span className="font-display bg-gradient-to-b from-white via-slate-200 to-slate-600 bg-clip-text text-[120px] font-bold leading-none tracking-tighter text-transparent sm:text-[180px]">
+          <span className="font-display bg-linear-to-b from-white via-slate-200 to-slate-600 bg-clip-text text-[120px] font-bold leading-none tracking-tighter text-transparent sm:text-[180px]">
             404
           </span>
           <div className="absolute inset-0 -z-10 rounded-full bg-[#A6D63A]/20 blur-3xl" />
@@ -70,9 +70,9 @@ export default function NotFound() {
           <MagneticButton className="w-full sm:w-auto">
             <Link
               href="/"
-              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#bdff22] to-[#A6D63A] px-8 py-3.5 text-sm font-bold text-[#081826] shadow-[0_0_20px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(166,214,58,0.6)]"
+              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-[#A6D63A] via-[#bdff22] to-[#A6D63A] px-8 py-3.5 text-sm font-bold text-[#081826] shadow-[0_0_20px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(166,214,58,0.6)]"
             >
-              <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+              <span className="animate-shimmer pointer-events-none absolute inset-0 -top-full left-0 w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/60 to-transparent" />
               <Home className="relative z-10 h-4 w-4" />
               <span className="relative z-10">Volver al inicio</span>
             </Link>

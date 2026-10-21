@@ -135,7 +135,7 @@ export default function RootLayout({
           <div className="pointer-events-none fixed inset-0 z-0 h-full w-full overflow-hidden">
             {/* Patrón de rejilla con visibilidad aumentada y degradé vertical */}
             <div
-              className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff18_1px,transparent_1px),linear-gradient(to_bottom,#ffffff18_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]"
+              className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff18_1px,transparent_1px),linear-gradient(to_bottom,#ffffff18_1px,transparent_1px)] bg-size-[3.5rem_3.5rem]"
               style={{
                 WebkitMaskImage:
                   "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%)",
@@ -145,8 +145,8 @@ export default function RootLayout({
             />
 
             {/* Luces Neón de Fondo */}
-            <div className="animate-aurora absolute left-1/2 top-10 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-[#A6D63A]/15 blur-[140px]" />
-            <div className="animate-aurora absolute -right-20 top-1/3 h-[400px] w-[400px] rounded-full bg-cyan-500/10 blur-[130px] [animation-delay:-6s]" />
+            <div className="animate-aurora absolute left-1/2 top-10 -translate-x-1/2 h-125 w-200 rounded-full bg-[#A6D63A]/15 blur-[140px]" />
+            <div className="animate-aurora absolute -right-20 top-1/3 h-100 w-100 rounded-full bg-cyan-500/10 blur-[130px] [animation-delay:-6s]" />
           </div>
 
           {/* Contenido principal sobre el fondo */}
