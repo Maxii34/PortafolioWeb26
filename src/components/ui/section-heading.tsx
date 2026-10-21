@@ -44,7 +44,7 @@ export function SectionHeading({
             <RevealText
               text={highlight}
               delay={0.25}
-              wordClassName="bg-gradient-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent"
+              wordClassName="bg-linear-to-r from-[#A6D63A] via-emerald-300 to-cyan-400 bg-clip-text text-transparent"
             />
           </>
         ) : null}

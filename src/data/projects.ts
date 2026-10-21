@@ -103,15 +103,15 @@ export const projects: Project[] = [
     title: "IronGim",
     type: "Sistema de gestión",
     description:
-      "Una plataforma pensada Controlá socios, ingresos en portería, vencimientos automáticos y planes desde una experiencia rápida y moderna..",
+      "Una plataforma para gimnasios que permite controlar socios, ingresos en portería, vencimientos automáticos y planes desde una experiencia rápida y moderna.",
     cover: "/img/irongim.png",
     link: "https://irongim-sistema-gestor.vercel.app",
     features: [
-      "control de ingresos",
+      "Control de ingresos",
       "Gestión de usuarios",
-      "Panel administrativo de stadisticas",
+      "Panel administrativo de estadísticas",
       "Control de vencimientos",
-      "Gestión de planes e membrecias"
+      "Gestión de planes y membresías",
     ],
   },
   {

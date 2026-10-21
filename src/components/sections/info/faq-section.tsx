@@ -19,7 +19,7 @@ export function FaqSection() {
     <section id="faq" className="relative py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* CONTENEDOR PRINCIPAL */}
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
+        <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
           {/* Luz ambiental de fondo */}
           <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-[#A6D63A]/10 blur-3xl pointer-events-none" />
 
@@ -61,10 +61,10 @@ export function FaqSection() {
                 <MagneticButton strength={12} className="mt-4 w-full">
                   <Link
                     href="#contacto"
-                    className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] py-2.5 text-xs font-bold text-slate-900 shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(166,214,58,0.6)] active:scale-[0.98]"
+                    className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-linear-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] py-2.5 text-xs font-bold text-slate-900 shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(166,214,58,0.6)] active:scale-[0.98]"
                   >
                     {/* Rayo de luz en movimiento continuo */}
-                    <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+                    <span className="animate-shimmer pointer-events-none absolute inset-0 -top-full left-0 w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/70 to-transparent" />
 
                     <span className="relative z-10">Hacer una pregunta</span>
 

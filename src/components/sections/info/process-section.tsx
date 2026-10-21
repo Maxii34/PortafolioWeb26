@@ -84,7 +84,7 @@ export function ProcessSection() {
     <section id="proceso" className="relative py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* CONTENEDOR PRINCIPAL */}
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
+        <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:p-8 lg:p-12">
           {/* Elemento decorativo de luz */}
           <div className="animate-aurora pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
 
@@ -98,11 +98,11 @@ export function ProcessSection() {
           {/* PASOS EN DESKTOP (5 Columnas conectadas por línea de progreso) */}
           <div ref={desktopRef} className="relative mt-14 hidden lg:block">
             {/* Línea base + relleno animado */}
-            <div className="absolute inset-x-10 top-11 -z-0 h-0.5 bg-white/10" />
-            <div className="absolute inset-x-10 top-11 -z-0 h-0.5 overflow-hidden">
+            <div className="absolute inset-x-10 top-11 z-0 h-0.5 bg-white/10" />
+            <div className="absolute inset-x-10 top-11 z-0 h-0.5 overflow-hidden">
               <div
                 ref={fillRef}
-                className="h-full w-full origin-left bg-gradient-to-r from-[#A6D63A] via-emerald-400 to-cyan-400 shadow-[0_0_12px_rgba(166,214,58,0.7)]"
+                className="h-full w-full origin-left bg-linear-to-r from-[#A6D63A] via-emerald-400 to-cyan-400 shadow-[0_0_12px_rgba(166,214,58,0.7)]"
               />
             </div>
 

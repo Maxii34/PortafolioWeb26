@@ -39,7 +39,7 @@ export function ContactSection() {
   } = useForm<FormData>();
 
   const mensajeWs = encodeURIComponent(
-    "¡Hola! 👋 Vi tu sitio web CodeMáx.Dev y me interesa obtener información sobre el desarrollo de una página web para mi negocio. ¿Podemos conversar?",
+    "¡Hola! 👋 Vi tu sitio web CodeMáx y me interesa obtener información sobre el desarrollo de una página web para mi negocio. ¿Podemos conversar?",
   );
 
   const urlWhatsapp = `https://wa.me/${numero}?text=${mensajeWs}`;
@@ -105,7 +105,7 @@ export function ContactSection() {
     <section id="contacto" className="relative py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         {/* CONTENEDOR PRINCIPAL */}
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-8 lg:p-12">
+        <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-8 lg:p-12">
           {/* Luz ambiental */}
           <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#A6D63A]/10 blur-3xl pointer-events-none" />
 
@@ -245,7 +245,7 @@ export function ContactSection() {
                 </p>
 
                 {/* TARJETA DE WHATSAPP DIRECTO */}
-                <div className="mt-6 rounded-2xl border border-[#A6D63A]/30 bg-gradient-to-br from-[#A6D63A]/15 to-transparent p-5">
+                <div className="mt-6 rounded-2xl border border-[#A6D63A]/30 bg-linear-to-br from-[#A6D63A]/15 to-transparent p-5">
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A6D63A]">
                     Contacto Rápido
                   </span>
@@ -285,25 +285,29 @@ export function ContactSection() {
                     <FaWhatsapp className="text-xl" />
                   </a>
 
-                  <a
-                    href={instagram}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Instagram"
-                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E4405F]/20 border border-[#E4405F]/40 text-[#E4405F] transition-all duration-300 hover:bg-[#E4405F] hover:text-white hover:scale-110"
-                  >
-                    <FaInstagram className="text-xl" />
-                  </a>
+                  {instagram !== "#" ? (
+                    <a
+                      href={instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Instagram"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E4405F]/20 border border-[#E4405F]/40 text-[#E4405F] transition-all duration-300 hover:bg-[#E4405F] hover:text-white hover:scale-110"
+                    >
+                      <FaInstagram className="text-xl" />
+                    </a>
+                  ) : null}
 
-                  <a
-                    href={facebook}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Facebook"
-                    className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1877F2]/20 border border-[#1877F2]/40 text-[#1877F2] transition-all duration-300 hover:bg-[#1877F2] hover:text-white hover:scale-110"
-                  >
-                    <FaFacebookF className="text-lg" />
-                  </a>
+                  {facebook !== "#" ? (
+                    <a
+                      href={facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Facebook"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1877F2]/20 border border-[#1877F2]/40 text-[#1877F2] transition-all duration-300 hover:bg-[#1877F2] hover:text-white hover:scale-110"
+                    >
+                      <FaFacebookF className="text-lg" />
+                    </a>
+                  ) : null}
                 </div>
               </div>
             </div>

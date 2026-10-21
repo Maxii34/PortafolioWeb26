@@ -87,7 +87,7 @@ export default async function ProyectoDetallePage({
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-sm font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)]"
+                className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-[#A6D63A] via-[#beff2d] to-[#A6D63A] px-8 py-3.5 text-sm font-bold text-[#081826] shadow-[0_0_15px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(166,214,58,0.6)]"
               >
                 <span>Visitar sitio online</span>
                 <ExternalLink className="h-4 w-4" />
@@ -98,14 +98,14 @@ export default async function ProyectoDetallePage({
                 href="/#contacto"
                 className="inline-flex items-center gap-2 rounded-full border border-[#A6D63A]/40 bg-[#081826]/70 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-[#A6D63A] hover:bg-[#A6D63A] hover:text-[#081826]"
               >
-                <span>Quiero algo así</span>
+                <span>Quiero algo similar</span>
               </Link>
             </MagneticButton>
           </div>
         </div>
 
         {/* PORTADA */}
-        <div className="relative mt-10 overflow-hidden rounded-[24px] border border-white/10 shadow-2xl">
+        <div className="relative mt-10 overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
           <div className="relative aspect-video w-full bg-slate-900">
             <Image
               src={project.cover}
@@ -116,12 +116,12 @@ export default async function ProyectoDetallePage({
               priority
             />
           </div>
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#081826]/60 via-transparent to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#081826]/60 via-transparent to-transparent" />
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.6fr_1fr]">
           {/* FUNCIONALIDADES */}
-          <div className="rounded-[24px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
             <h2 className="text-xl font-extrabold text-white">
               Funcionalidades principales
             </h2>
@@ -154,7 +154,7 @@ export default async function ProyectoDetallePage({
           </div>
 
           {/* FICHA */}
-          <aside className="h-fit rounded-[24px] border border-white/10 bg-[#081826]/80 p-8 backdrop-blur-md">
+          <aside className="h-fit rounded-3xl border border-white/10 bg-[#081826]/80 p-8 backdrop-blur-md">
             <h2 className="text-xl font-extrabold text-white">
               Ficha del proyecto
             </h2>

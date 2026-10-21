@@ -40,7 +40,7 @@ export function AboutSection() {
             className="relative flex justify-center lg:col-span-5"
           >
             {/* Marco decorativo de luz detrás de la foto */}
-            <div className="absolute inset-0 -m-3 rounded-3xl bg-gradient-to-tr from-[#A6D63A]/40 via-cyan-500/20 to-transparent opacity-60 blur-xl transition-all duration-700" />
+            <div className="absolute inset-0 -m-3 rounded-3xl bg-linear-to-tr from-[#A6D63A]/40 via-cyan-500/20 to-transparent opacity-60 blur-xl transition-all duration-700" />
 
             {/* CONTENEDOR DE LA IMAGEN CON GRUPO DE HOVER */}
             <motion.div
@@ -62,7 +62,7 @@ export function AboutSection() {
               </motion.div>
 
               {/* Degradado oscuro inferior sobre la foto */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#081826] via-transparent to-transparent opacity-85 transition-opacity duration-500 group-hover:opacity-70" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#081826] via-transparent to-transparent opacity-85 transition-opacity duration-500 group-hover:opacity-70" />
 
               {/* Nombre flotante sobre la foto */}
               <div className="absolute inset-x-6 bottom-6 transition-transform duration-500 group-hover:-translate-y-1">
@@ -146,9 +146,9 @@ export function AboutSection() {
               <MagneticButton>
                 <Link
                   href="#contacto"
-                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-[#A6D63A] via-[#bdff22] to-[#A6D63A] px-8 py-3.5 text-xs font-extrabold uppercase tracking-wider text-slate-900 shadow-[0_0_20px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(166,214,58,0.6)] active:scale-95"
+                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-linear-to-r from-[#A6D63A] via-[#bdff22] to-[#A6D63A] px-8 py-3.5 text-xs font-extrabold uppercase tracking-wider text-slate-900 shadow-[0_0_20px_rgba(166,214,58,0.3)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(166,214,58,0.6)] active:scale-95"
                 >
-                  <span className="animate-shimmer pointer-events-none absolute inset-0 -top-[100%] left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+                  <span className="animate-shimmer pointer-events-none absolute inset-0 -top-full left-0 w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/60 to-transparent" />
                   <span className="relative z-10">Hablemos de tu proyecto</span>
                   <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                 </Link>

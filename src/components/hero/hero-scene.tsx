@@ -92,7 +92,7 @@ export function HeroScene() {
         <ParticleField />
         <Rig />
       </Canvas>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#081826] via-transparent to-[#081826]/70" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#081826] via-transparent to-[#081826]/70" />
     </div>
   );
 }
